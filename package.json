@@ -1,0 +1,13 @@
+{
+  "name": "generation_ai",
+  "version": "1.0.0",
+  "author": "golden-gates-sf <redchenko.milana@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel ./src/index.html"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.12.0",
+    "parcel": "^2.12.0"
+  }
+}
