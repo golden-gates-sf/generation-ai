@@ -9,5 +9,8 @@
   "devDependencies": {
     "@parcel/transformer-sass": "2.12.0",
     "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "typed.js": "^2.1.0"
   }
 }
