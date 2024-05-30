@@ -94,12 +94,30 @@ header {
       height: 40px;
     }
   }
+
+  .languages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+      background-color: #5c207d5b;
+      position: absolute;
+      z-index: 100;
+      // top: 20px;
+      font-size: 18px;
+      list-style: none;
+      // display: flex;
+      // flex-direction: column;
+
+      li {
+        padding: 10px;
+      }
+    }
+  }
 }
 
 nav {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 1fr;
@@ -188,9 +206,7 @@ nav {
 
   .nav-footer {
     font-size: 1.4rem;
-    // display: flex;
     justify-self: end;
-    // align-items: center;
     height: 90px;
 
     a {
@@ -234,7 +250,6 @@ main {
     .main-text {
       display: flex;
       flex-direction: column;
-      // align-items: center;
 
       text-align: left;
       gap: 50px;
@@ -300,7 +315,6 @@ section {
 .steps-section {
   ol {
     display: flex;
-    // justify-content: space-around;
     list-style-position: inside;
     gap: 20px;
   }
