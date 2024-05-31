@@ -56,7 +56,7 @@ header {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 5fr 1fr 1fr;
-  gap: 20px;
+  gap: 3.8rem;
   padding: 18px;
   font-size: 22px;
   align-items: center;
@@ -68,7 +68,6 @@ header {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding-left: 40px;
 
     img {
       height: 56px;
@@ -95,23 +94,37 @@ header {
     }
   }
 
+  .logo-link {
+    padding-left: 40px;
+  }
+
   .languages-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-self: end;
 
     ul {
-      background-color: #5c207d5b;
+      background-color: #5c207d40;
       position: absolute;
       z-index: 100;
-      // top: 20px;
+      top: 5%;
       font-size: 18px;
       list-style: none;
-      // display: flex;
-      // flex-direction: column;
+      border-radius: 1.1rem;
+      padding: 1.1rem 1.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      visibility: hidden;
 
       li {
-        padding: 10px;
+        padding: 0 px;
+        
+        a {
+          padding-left: 0;
+          color: #fff;
+        }
       }
     }
   }

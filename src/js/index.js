@@ -21,6 +21,9 @@ const navMenu = document.querySelector("nav");
 const menuBtnIcon = document.querySelector(".menu-btn-icon");
 const header = document.querySelector("header");
 
+const langBtn = document.querySelector(".languages-btn");
+const langDropList = document.querySelector(".languages-droplist");
+
 menuBtn.addEventListener("click", () => {
     if (navMenu.style.visibility !== "visible") {
         navMenu.style.visibility = "visible";
@@ -35,3 +38,8 @@ menuBtn.addEventListener("click", () => {
         menuBtnIcon.src = menuIcon;    
     }
 })
+
+langBtn.addEventListener("click", () => {
+    langDropList.style.visibility === "visible" ? langDropList.style.visibility = "hidden" : langDropList.style.visibility = "visible";  
+});
+
