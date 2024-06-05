@@ -17,3 +17,4 @@ jobs:
         server: nextgenis.ai
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
+        local-dir: ./dist/

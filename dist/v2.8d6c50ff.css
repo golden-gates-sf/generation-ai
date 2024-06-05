@@ -1,0 +1,182 @@
+@import "https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap";
+@font-face {
+  font-family: One Day;
+  src: url("ONEDAY.c06c85f1.otf");
+  src: url("ONEDAY.6ed8853c.ttf");
+}
+
+@font-face {
+  font-family: Multilines;
+  src: url("MultiTypeLines-Columns.d60bd4ff.otf");
+}
+
+@font-face {
+  font-family: Gotham Pro;
+  src: url("gothampro.86acb897.ttf"), url("gothampro_black.a4b5c58a.ttf"), url("gothampro_blackitalic.f94f4212.ttf"), url("gothampro_bold.22938f4c.ttf"), url("gothampro_bolditalic.b4662063.ttf"), url("gothampro_italic.476a9f0e.ttf"), url("gothampro_light.e45d3f32.ttf"), url("gothampro_lightitalic.5bff1865.ttf"), url("gothampro_medium.cf13383d.ttf"), url("gothampro_mediumitalic.0d5df24f.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: #fff;
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+}
+
+body {
+  background-color: #000;
+}
+
+button {
+  letter-spacing: .24px;
+  white-space: nowrap;
+  border: none;
+  border-radius: 35.5px;
+  padding: .8rem 3rem;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+header {
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 18px;
+  font-size: 22px;
+  display: grid;
+}
+
+header a {
+  justify-self: center;
+}
+
+header a img {
+  height: 56px;
+}
+
+header nav {
+  display: center;
+  justify-self: center;
+}
+
+header nav ul {
+  flex-direction: row;
+  gap: 70px;
+  list-style: none;
+  display: flex;
+}
+
+header nav ul a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 40px;
+  min-height: 90vh;
+  padding-top: 20px;
+  padding-left: 140px;
+  padding-right: 20px;
+  display: flex;
+}
+
+main button {
+  color: #fff;
+}
+
+main img {
+  width: 800px;
+  height: 500px;
+}
+
+main .main-info {
+  flex-direction: column;
+  gap: 40px;
+  display: flex;
+}
+
+main .main-info .main-text {
+  text-align: left;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 800px;
+  padding-top: 70px;
+  display: flex;
+}
+
+main .main-info .main-text h1 {
+  font-size: 40px;
+}
+
+main .main-info .main-text p {
+  font-optical-sizing: auto;
+  font-size: 18px;
+}
+
+main .main-info .main-text span {
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(right, #31d7da, #ed20d2) text;
+}
+
+main .main-info .main-text .h1-example1 {
+  font-family: One Day;
+}
+
+main .main-info .main-text .cyr1 {
+  font-family: Jost, sans-serif;
+}
+
+main .main-info .main-text .cyr2 {
+  font-family: Gotham Pro;
+}
+
+main .main-info .btn-back {
+  background: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
+}
+
+main .main-info .btn-border {
+  background-color: #00000043;
+  border-width: 4px;
+  border-image: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
+}
+
+main .main-info .btn-border:hover {
+  color: #000;
+  background-color: #fffffff7;
+  transition: all .7s;
+}
+
+section {
+  justify-content: center;
+  padding: 30px;
+  display: flex;
+}
+
+.logo-section img {
+  height: 200px;
+}
+
+.steps-section ol {
+  gap: 20px;
+  list-style-position: inside;
+  display: flex;
+}
+
+footer {
+  justify-content: center;
+  margin-bottom: 2rem;
+  display: flex;
+}
+/*# sourceMappingURL=v2.8d6c50ff.css.map */
