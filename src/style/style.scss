@@ -1,12 +1,10 @@
 @import url("/src/fonts/oneday/oneday-font.css");
 @import url("/src/fonts/Cyrillic/multitypes-lines-columns/multilines-font.css");
 @import url("/src/fonts/gotham_pro/gotham-pro-font.css");
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
 $font-logo: "One Day";
 $font-h1-ru: "Multilines";
-$font-main1: "Jost", sans-serif;
-$font-main2: "Gotham Pro";
+$font-main: "Gotham Pro";
 
 $gradient1: -webkit-linear-gradient(right, #31d7da, #ed20d2);
 $gradient2: -webkit-linear-gradient(right, #31d7da, #ed20d2);
@@ -21,7 +19,7 @@ $background-color: #130515;
 
 html {
   color: #fff;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: $font-main;
 }
 
 body {
@@ -50,6 +48,42 @@ a {
 .main-container {
   position: relative;
   z-index: 0;
+
+  .form-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.905);
+    visibility: hidden;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      background-color: #130515f6;
+      align-items: center;
+      justify-content: center;
+      gap: 7vh;
+      height: 70vh;
+      padding: 30px 80px;
+      border-radius: 16px;
+
+      input {
+        border-radius: 35.5px;
+        font-size: 24px;
+        line-height: 35px;
+        padding: 0.5rem 2rem;
+      }
+
+      button {
+        max-width: 260px;
+      }
+    }
+  }
 }
 
 header {
@@ -120,7 +154,7 @@ header {
 
       li {
         padding: 0 px;
-        
+
         a {
           padding-left: 0;
           color: #fff;
@@ -259,21 +293,14 @@ main {
     flex-direction: column;
     gap: 50px;
     max-width: 980px;
+    text-align: left;
 
     .main-text {
-      display: flex;
-      flex-direction: column;
-
-      text-align: left;
-      gap: 50px;
+      margin-bottom: 50px;
+      height: 100px;
 
       h1 {
         font-size: 50px;
-      }
-
-      p {
-        font-size: 20px;
-        font-optical-sizing: auto;
       }
 
       span {
@@ -282,33 +309,20 @@ main {
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
-      .cyr1 {
-        font-family: $font-main1;
-      }
-
-      .cyr2 {
-        font-family: $font-main2;
-      }
     }
 
-    .btn-back {
+    p {
+      font-size: 20px;
+      font-optical-sizing: auto;
+    }
+
+    .register-btn {
       background: rgb(237, 32, 210);
       background: linear-gradient(
         90deg,
         rgba(237, 32, 210, 1) 0%,
         rgba(49, 215, 218, 1) 87%
       );
-    }
-
-    .btn-border {
-      border-image: linear-gradient(
-        90deg,
-        rgba(237, 32, 210, 1) 0%,
-        rgba(49, 215, 218, 1) 87%
-      );
-      border-width: 4px;
-      background-color: #00000043;
     }
   }
 }

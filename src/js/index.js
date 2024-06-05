@@ -24,6 +24,9 @@ const header = document.querySelector("header");
 const langBtn = document.querySelector(".languages-btn");
 const langDropList = document.querySelector(".languages-droplist");
 
+const formOverlay = document.querySelector(".form-overlay");
+const registerBtn = document.querySelector(".register-btn");
+
 menuBtn.addEventListener("click", () => {
     if (navMenu.style.visibility !== "visible") {
         navMenu.style.visibility = "visible";
@@ -42,4 +45,8 @@ menuBtn.addEventListener("click", () => {
 langBtn.addEventListener("click", () => {
     langDropList.style.visibility === "visible" ? langDropList.style.visibility = "hidden" : langDropList.style.visibility = "visible";  
 });
+
+registerBtn.addEventListener("click", () => {
+    formOverlay.style.visibility = "visible";
+})
 
