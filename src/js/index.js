@@ -16,9 +16,8 @@ const typeOptions = {
 
 const typed = new Typed(".typed-text", typeOptions)
 
-const menuBtn = document.querySelector(".menu-btn");
+const menuBtn = document.querySelector("#menu-toggle");
 const navMenu = document.querySelector("nav");
-const menuBtnIcon = document.querySelector(".menu-btn-icon");
 const header = document.querySelector("header");
 
 const langBtn = document.querySelector(".languages-btn");
@@ -33,12 +32,12 @@ menuBtn.addEventListener("click", () => {
         header.style.position = "fixed";
         header.style.top = "0";
         header.style.zIndex = "100";
-        menuBtnIcon.src = crossIcon;
+        menuBtn.classList.add("nav-open")
     } 
     else {
         navMenu.style.visibility = "hidden";
         header.style.position = "static";
-        menuBtnIcon.src = menuIcon;    
+        menuBtn.classList.remove("nav-open")
     }
 })
 
