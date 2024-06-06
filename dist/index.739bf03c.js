@@ -606,9 +606,8 @@ const typeOptions = {
     loopCount: Infinity
 };
 const typed = new (0, _typedJsDefault.default)(".typed-text", typeOptions);
-const menuBtn = document.querySelector(".menu-btn");
+const menuBtn = document.querySelector("#menu-toggle");
 const navMenu = document.querySelector("nav");
-const menuBtnIcon = document.querySelector(".menu-btn-icon");
 const header = document.querySelector("header");
 const langBtn = document.querySelector(".languages-btn");
 const langDropList = document.querySelector(".languages-droplist");
@@ -620,11 +619,11 @@ menuBtn.addEventListener("click", ()=>{
         header.style.position = "fixed";
         header.style.top = "0";
         header.style.zIndex = "100";
-        menuBtnIcon.src = (0, _closeCrossSvgDefault.default);
+        menuBtn.classList.add("nav-open");
     } else {
         navMenu.style.visibility = "hidden";
         header.style.position = "static";
-        menuBtnIcon.src = (0, _menuBoldIconLbSvgDefault.default);
+        menuBtn.classList.remove("nav-open");
     }
 });
 langBtn.addEventListener("click", ()=>{
