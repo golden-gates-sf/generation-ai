@@ -72,16 +72,34 @@ a {
       height: 70vh;
       padding: 30px 80px;
       border-radius: 16px;
+      box-shadow: 1px 1px 14px $light-blue;
 
-      input {
-        border-radius: 35.5px;
-        font-size: 24px;
+      .form-input {
+        width: 24vw;
+        border-radius: 10px;
+        font-size: 18px;
         line-height: 35px;
-        padding: 0.5rem 2rem;
+        padding: 0.5rem 1.6rem;
       }
 
       button {
-        max-width: 260px;
+        max-width: 220px;
+      }
+
+      .private-policy-container {
+        text-align: left;
+        max-width: 26vw;
+        align-self: end;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        font-size: 12px;
+
+        input {
+          height: 14px;
+          margin-right: 16px;
+        }
       }
     }
   }

@@ -13,16 +13,22 @@
         <form>
           <input
             type="text"
+            name="Username"
+            placeholder="Your name"
+            id="username-field"
+            class="form-input"
+          />
+          <input
+            type="email"
             name="Email"
             placeholder="Email"
             id="email-field"
+            class="form-input"
           />
-          <input
-            type="text"
-            name="Telegram"
-            placeholder="Telegram"
-            id="tg-field"
-          />
+          <div class="private-policy-container">
+            <input type="checkbox" id="privacy-check" name="privacy-check" />
+            <label for="privacy-check">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+          </div>
           <button type="submit" class="form-submit-btn">Отправить</button>
         </form>
       </section>
