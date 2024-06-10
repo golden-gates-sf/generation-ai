@@ -35,6 +35,7 @@ button {
   border: none;
   border-radius: 35.5px;
   padding: .8rem 3rem;
+  font-family: Gotham Pro;
   font-size: 24px;
   font-weight: bold;
   line-height: 35px;
@@ -71,24 +72,68 @@ a {
   align-items: center;
   gap: 7vh;
   height: 70vh;
-  padding: 30px 80px;
+  padding: 10px 60px;
   display: flex;
   box-shadow: 1px 1px 14px #92f0f7;
 }
 
-.main-container .form-overlay form .form-input {
+.main-container .form-overlay form .form-header {
+  flex-direction: row;
+  justify-content: end;
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.main-container .form-overlay form .form-header .form-close-btn {
+  background: none;
+  padding: 0;
+  line-height: 0;
+}
+
+.main-container .form-overlay form .form-header .form-close-btn img {
+  height: 40px;
+}
+
+.main-container .form-overlay form .form-input-container {
+  flex-direction: column;
+  gap: 1.3em;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.main-container .form-overlay form .form-input-container .form-input {
+  color: #130515;
   border-radius: 10px;
-  width: 24vw;
+  width: 28vw;
   padding: .5rem 1.6rem;
+  font-family: Gotham Pro;
   font-size: 18px;
   line-height: 35px;
 }
 
-.main-container .form-overlay form button {
-  max-width: 220px;
+.main-container .form-overlay form .form-submit-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em;
+  display: flex;
 }
 
-.main-container .form-overlay form .private-policy-container {
+.main-container .form-overlay form .form-submit-container .form-submit-btn {
+  color: #130515;
+  border-radius: 10px;
+  max-width: 180px;
+  padding: 8px 24px;
+  font-size: 18px;
+  transition: color .3s ease-out;
+}
+
+.main-container .form-overlay form .form-submit-container .form-submit-btn:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
+}
+
+.main-container .form-overlay form .form-submit-container .private-policy-container {
   text-align: left;
   flex-direction: row;
   justify-content: start;
@@ -99,9 +144,10 @@ a {
   display: flex;
 }
 
-.main-container .form-overlay form .private-policy-container input {
-  height: 14px;
-  margin-right: 16px;
+.main-container .form-overlay form .form-submit-container label {
+  text-align: center;
+  max-width: 30vw;
+  font-size: 12px;
 }
 
 header {

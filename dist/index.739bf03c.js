@@ -631,9 +631,16 @@ langBtn.addEventListener("click", ()=>{
 });
 registerBtn.addEventListener("click", ()=>{
     formOverlay.style.visibility = "visible";
+    const closeFormBtn = document.getElementById("form-close-btn");
+    closeFormBtn.addEventListener("click", ()=>{
+        formOverlay.style.visibility = "hidden";
+    });
+//   if (formOverlay.style.visibility !== "visible")
+//     formOverlay.classList.add("form--open");
+//   else formOverlay.classList.remove("form--open");
 });
 
-},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/icons/menu_icons/close-cross.svg":"f8krO","../img/icons/menu_icons/menu-bold-icon-lb.svg":"eBvSE"}],"6M0L2":[function(require,module,exports) {
+},{"typed.js":"6M0L2","../img/icons/menu_icons/close-cross.svg":"f8krO","../img/icons/menu_icons/menu-bold-icon-lb.svg":"eBvSE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6M0L2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>i);

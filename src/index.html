@@ -11,25 +11,29 @@
     <div class="main-container">
       <section class="form-overlay">
         <form>
-          <input
-            type="text"
-            name="Username"
-            placeholder="Your name"
-            id="username-field"
-            class="form-input"
-          />
-          <input
-            type="email"
-            name="Email"
-            placeholder="Email"
-            id="email-field"
-            class="form-input"
-          />
-          <div class="private-policy-container">
-            <input type="checkbox" id="privacy-check" name="privacy-check" />
-            <label for="privacy-check">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+          <div class="form-header">
+            <button class="form-close-btn" id="form-close-btn"><img src="./img/icons/menu_icons/close-cross.svg" /></button>
           </div>
-          <button type="submit" class="form-submit-btn">Отправить</button>
+          <div class="form-input-container">
+            <input
+              type="text"
+              name="Username"
+              placeholder="Your name"
+              id="username-field"
+              class="form-input"
+            />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              id="email-field"
+              class="form-input"
+            />
+          </div>
+          <div class="form-submit-container">
+            <button type="submit" class="form-submit-btn" name="Form-Submit">Подписаться</button>  
+            <label for="Form-Submit">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+          </div>
         </form>
       </section>
       <header>
