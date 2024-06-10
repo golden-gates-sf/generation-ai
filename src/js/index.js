@@ -53,10 +53,12 @@ langBtn.addEventListener("click", () => {
 registerBtn.addEventListener("click", () => {
   // const formInputContainer = document.getElementById("form-input-container");
   const slider = document.getElementById("slider");
+  const switchCheckbox = document.querySelector("#switch-checkbox");
   
   let switchMode = "Email";
   slider.innerText = "Telegram";
   slider.setAttribute("data-before", switchMode);
+  switchCheckbox.checked = false;
 
     formOverlay.style.visibility = "visible";
     const closeFormBtn = document.getElementById("form-close-btn");
@@ -76,7 +78,7 @@ registerBtn.addEventListener("click", () => {
       }
       else {
         slider.style.justifyContent = "end";
-        slider.innerText = "Telegram"
+        slider.innerText = "Telegram";
         switchMode = "Email";
         slider.setAttribute("data-before", switchMode);
       }
