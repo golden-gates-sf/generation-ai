@@ -106,7 +106,7 @@ a {
   border-radius: 10px;
   justify-content: end;
   align-items: center;
-  padding: 0 1.2em;
+  padding: 0 1.2em 0 2.2em;
   transition: transform .4s;
   display: flex;
   position: absolute;
@@ -115,7 +115,7 @@ a {
 
 .main-container .form-overlay form .form-header .slider:before {
   content: "";
-  content: "Email";
+  content: attr(data-before);
   background-color: #fff;
   border-radius: 10px;
   justify-content: center;
@@ -155,7 +155,6 @@ a {
 .main-container .form-overlay form .form-input-container {
   flex-direction: column;
   gap: 1.3em;
-  padding-bottom: 10px;
   display: flex;
 }
 

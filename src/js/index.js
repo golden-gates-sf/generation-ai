@@ -51,29 +51,34 @@ langBtn.addEventListener("click", () => {
 });
 
 registerBtn.addEventListener("click", () => {
-  const formInputContainer = document.getElementById("form-input-container");
+  // const formInputContainer = document.getElementById("form-input-container");
   const slider = document.getElementById("slider");
-  let switchMode = 0;
+  
+  let switchMode = "Email";
+  slider.innerText = "Telegram";
+  slider.setAttribute("data-before", switchMode);
 
     formOverlay.style.visibility = "visible";
-
     const closeFormBtn = document.getElementById("form-close-btn");
     closeFormBtn.addEventListener("click", () => {
       switchMode = 0;
         formOverlay.style.visibility = "hidden";
-        // formInputContainer.style.visibility = "hidden";
     });
 
     slider.addEventListener("click", (e) => {
-      if (switchMode === 0) {
-        // formInputContainer.style.visibility = "hidden";
-        switchMode += 1;
-        console.log(switchMode);
+      slider.setAttribute("data-before", switchMode);
+
+      if (switchMode === "Email") {
+        slider.style.justifyContent = "start";
+        slider.innerText = "Email"
+        switchMode = "Telegram";
+        slider.setAttribute("data-before", switchMode);
       }
       else {
-        // formInputContainer.style.visibility = "visible";
-        switchMode -= 1;
-        console.log(switchMode)
+        slider.style.justifyContent = "end";
+        slider.innerText = "Telegram"
+        switchMode = "Email";
+        slider.setAttribute("data-before", switchMode);
       }
     })
 //   if (formOverlay.style.visibility !== "visible")

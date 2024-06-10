@@ -112,7 +112,7 @@ a {
           display: flex;
           align-items: center;
           justify-content: end;
-          padding: 0 1.2em;
+          padding: 0 1.2em 0 2.2em;
         }
         
         .slider:before {
@@ -126,7 +126,7 @@ a {
           -webkit-transition: transform .4s;
           transition: transform .4s;
           border-radius: 10px;
-          content: "Email";
+          content: attr(data-before);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -162,7 +162,6 @@ a {
         display: flex;
         flex-direction: column;
         gap: 1.3em;
-        padding-bottom: 10px;
         
         .form-input {
           width: 28vw;
