@@ -12,9 +12,13 @@
       <section class="form-overlay">
         <form>
           <div class="form-header">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider" id="slider">Telegram</span>
+            </label>
             <button class="form-close-btn" id="form-close-btn"><img src="./img/icons/menu_icons/close-cross.svg" /></button>
           </div>
-          <div class="form-input-container">
+          <div class="form-input-container" id="form-input-container">
             <input
               type="text"
               name="Username"
@@ -31,8 +35,8 @@
             />
           </div>
           <div class="form-submit-container">
-            <button type="submit" class="form-submit-btn" name="Form-Submit">Подписаться</button>  
-            <label for="Form-Submit">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+            <button type="submit" class="form-submit-btn" id="form-submit-btn">Подписаться</button>  
+            <label for="form-submit-btn">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
           </div>
         </form>
       </section>

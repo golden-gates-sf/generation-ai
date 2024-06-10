@@ -630,10 +630,26 @@ langBtn.addEventListener("click", ()=>{
     langDropList.style.visibility === "visible" ? langDropList.style.visibility = "hidden" : langDropList.style.visibility = "visible";
 });
 registerBtn.addEventListener("click", ()=>{
+    const formInputContainer = document.getElementById("form-input-container");
+    const slider = document.getElementById("slider");
+    let switchMode = 0;
     formOverlay.style.visibility = "visible";
     const closeFormBtn = document.getElementById("form-close-btn");
     closeFormBtn.addEventListener("click", ()=>{
+        switchMode = 0;
         formOverlay.style.visibility = "hidden";
+    // formInputContainer.style.visibility = "hidden";
+    });
+    slider.addEventListener("click", (e)=>{
+        if (switchMode === 0) {
+            // formInputContainer.style.visibility = "hidden";
+            switchMode += 1;
+            console.log(switchMode);
+        } else {
+            // formInputContainer.style.visibility = "visible";
+            switchMode -= 1;
+            console.log(switchMode);
+        }
     });
 //   if (formOverlay.style.visibility !== "visible")
 //     formOverlay.classList.add("form--open");

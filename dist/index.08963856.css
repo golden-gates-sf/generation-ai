@@ -78,15 +78,72 @@ a {
 }
 
 .main-container .form-overlay form .form-header {
-  flex-direction: row;
-  justify-content: end;
+  grid-template-rows: 1fr;
+  grid-template-columns: 4fr 1fr;
+  gap: 1.8rem;
   width: 100%;
-  padding-bottom: 20px;
+  display: grid;
+}
+
+.main-container .form-overlay form .form-header .switch {
+  place-self: end;
+  width: 14em;
+  height: 120%;
+  display: inline-block;
+  position: relative;
+}
+
+.main-container .form-overlay form .form-header .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.main-container .form-overlay form .form-header .slider {
+  cursor: pointer;
+  color: #130515;
+  background-color: #ccc;
+  border-radius: 10px;
+  justify-content: end;
+  align-items: center;
+  padding: 0 1.2em;
+  transition: transform .4s;
   display: flex;
+  position: absolute;
+  inset: 0;
+}
+
+.main-container .form-overlay form .form-header .slider:before {
+  content: "";
+  content: "Email";
+  background-color: #fff;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 6.7em;
+  height: 80%;
+  transition: transform .4s;
+  display: flex;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+}
+
+.main-container .form-overlay form .form-header input:checked + .slider {
+  background-color: #92f0f7;
+}
+
+.main-container .form-overlay form .form-header input:focus + .slider {
+  box-shadow: 0 0 1px #92f0f7;
+}
+
+.main-container .form-overlay form .form-header input:checked + .slider:before {
+  transform: translateX(6.7em);
 }
 
 .main-container .form-overlay form .form-header .form-close-btn {
   background: none;
+  justify-self: end;
   padding: 0;
   line-height: 0;
 }

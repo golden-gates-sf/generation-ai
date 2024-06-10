@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.08963856.css">
-    <script src="/index.739bf03c.js" defer=""></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./form2.scss" />
+    <script type="module" src="/src/js/index.js" defer></script>
     <title>Поколение AI</title>
   </head>
   <body>
@@ -12,31 +12,45 @@
       <section class="form-overlay">
         <form>
           <div class="form-header">
-            <label class="switch">
-              <input type="checkbox">
-              <span class="slider" id="slider">Telegram</span>
-            </label>
-            <button class="form-close-btn" id="form-close-btn"><img src="/close-cross.7caa1f84.svg"></button>
+            <span>Присоединяйся!</span>
+            <button class="form-close-btn" id="form-close-btn"><img src="./img/icons/menu_icons/close-cross.svg" /></button>
           </div>
-          <div class="form-input-container" id="form-input-container">
-            <input type="text" name="Username" placeholder="Your name" id="username-field" class="form-input">
-            <input type="email" name="Email" placeholder="Email" id="email-field" class="form-input">
+          <div class="form-input-container">
+            <input
+              type="text"
+              name="Username"
+              placeholder="Your name"
+              id="username-field"
+              class="form-input"
+            />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              id="email-field"
+              class="form-input"
+            />
           </div>
           <div class="form-submit-container">
-            <button type="submit" class="form-submit-btn" id="form-submit-btn">Подписаться</button>  
-            <label for="form-submit-btn">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+            <button type="submit" class="form-submit-btn" name="Form-Submit">Подписаться</button>  
+            <label for="Form-Submit">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
           </div>
         </form>
       </section>
       <header>
-        <a href="/index.html" class="logo-link"><img src="/ai_small.1eac6e89.png" alt="Generation AI logo">
-          <span>Generation AI</span></a>
+        <a href="index.html" class="logo-link"
+          ><img src="./img/Main_Page/ai_small.png" alt="Generation AI logo" />
+          <span>Generation AI</span></a
+        >
         <div class="languages-container">
           <button class="languages-btn">
-            <img src="/languages-icon.e28a5d30.png" alt="choose language">
+            <img
+              src="img/icons/header_icons/languages-icon.png"
+              alt="choose language"
+            />
           </button>
           <ul class="languages-droplist">
-            <li><a href="/index.html">RU / Русский</a></li>
+            <li><a href="index.html">RU / Русский</a></li>
             <li><a href="#">ENG / English</a></li>
             <li><a href="#">UA / Український</a></li>
           </ul>
@@ -56,7 +70,10 @@
         <div class="nav-footer">
           <a href="#">
             Присоединиться
-            <img src="/export-link-icon.b352ae77.svg" alt="Arrow">
+            <img
+              src="./img/icons/menu_icons/export-link-icon.svg"
+              alt="Arrow"
+            />
           </a>
         </div>
       </nav>
@@ -77,10 +94,10 @@
         </div>
       </main>
       <section class="video-section">
-        <img src="/main_page_waves.e07c97b4.jpg" alt="Video img">
+        <img src="/src/img/main_page_waves.jpg" alt="Video img" />
       </section>
       <section class="logo-section">
-        <img src="/ai_large.7f3f93ff.png" alt="Поколение AI лого">
+        <img src="./img/Main_Page/ai_large.png" alt="Поколение AI лого" />
       </section>
       <section class="steps-section">
         <ol>
