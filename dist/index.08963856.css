@@ -74,21 +74,35 @@ a {
   height: 70vh;
   padding: 10px 60px;
   display: flex;
+  position: relative;
   box-shadow: 1px 1px 14px #92f0f7;
 }
 
+.main-container .form-overlay form .form-close-btn {
+  background: none;
+  justify-self: end;
+  padding: 20px;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main-container .form-overlay form .form-close-btn img {
+  height: 40px;
+}
+
 .main-container .form-overlay form .form-header {
-  grid-template-rows: 1fr;
-  grid-template-columns: 4fr 1fr;
-  gap: 1.8rem;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  display: grid;
+  display: flex;
 }
 
 .main-container .form-overlay form .form-header .switch {
   place-self: end;
-  width: 14em;
-  height: 120%;
+  width: 16em;
+  height: 50px;
   display: inline-block;
   position: relative;
 }
@@ -106,7 +120,7 @@ a {
   border-radius: 10px;
   justify-content: end;
   align-items: center;
-  padding: 0 1.2em 0 2.2em;
+  padding: 0 1.4em 0 2.2em;
   transition: transform .4s;
   display: flex;
   position: absolute;
@@ -120,13 +134,13 @@ a {
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  width: 6.7em;
+  width: 8.3em;
   height: 80%;
   transition: transform .4s;
   display: flex;
   position: absolute;
   bottom: 4px;
-  left: 4px;
+  left: 8px;
 }
 
 .main-container .form-overlay form .form-header input:checked + .slider {
@@ -139,17 +153,6 @@ a {
 
 .main-container .form-overlay form .form-header input:checked + .slider:before {
   transform: translateX(6.7em);
-}
-
-.main-container .form-overlay form .form-header .form-close-btn {
-  background: none;
-  justify-self: end;
-  padding: 0;
-  line-height: 0;
-}
-
-.main-container .form-overlay form .form-header .form-close-btn img {
-  height: 40px;
 }
 
 .main-container .form-overlay form .form-input-container {

@@ -630,9 +630,10 @@ langBtn.addEventListener("click", ()=>{
     langDropList.style.visibility === "visible" ? langDropList.style.visibility = "hidden" : langDropList.style.visibility = "visible";
 });
 registerBtn.addEventListener("click", ()=>{
-    // const formInputContainer = document.getElementById("form-input-container");
+    const formInputContainer = document.getElementById("form-input-container");
     const slider = document.getElementById("slider");
     const switchCheckbox = document.querySelector("#switch-checkbox");
+    const submitContainer = document.getElementById("form-submit-container");
     let switchMode = "Email";
     slider.innerText = "Telegram";
     slider.setAttribute("data-before", switchMode);
@@ -648,6 +649,12 @@ registerBtn.addEventListener("click", ()=>{
         if (switchMode === "Email") {
             slider.style.justifyContent = "start";
             slider.innerText = "Email";
+            // formInputContainer.remove();
+            // submitContainer.remove();
+            // slider.insertAdjacentHTML("afterend", `
+            //     <label for="form-submit-btn">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+            //     <button type="submit" class="form-submit-btn" id="telegram-btn">Открыть телеграм</button>  
+            //   `)
             switchMode = "Telegram";
             slider.setAttribute("data-before", switchMode);
         } else {

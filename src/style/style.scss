@@ -74,19 +74,34 @@ a {
       padding: 10px 60px;
       border-radius: 16px;
       box-shadow: 1px 1px 14px $light-blue;
+      position: relative;
+
+      .form-close-btn {
+        padding: 0;
+        line-height: 0;
+        background: none;
+        justify-self: end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+
+        img {
+          height: 40px;
+        }
+      }
 
       .form-header {
         width: 100%;
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 4fr 1fr;
-        gap: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .switch {
           position: relative;
           display: inline-block;
-          width: 14em;
-          height: 120%;
+          width: 16em;
+          height: 50px;
           justify-self: end;
           align-self: end;
         }
@@ -112,15 +127,15 @@ a {
           display: flex;
           align-items: center;
           justify-content: end;
-          padding: 0 1.2em 0 2.2em;
+          padding: 0 1.4em 0 2.2em;
         }
         
         .slider:before {
           position: absolute;
           content: "";
           height: 80%;
-          width: 6.7em;
-          left: 4px;
+          width: 8.3em;
+          left: 8px;
           bottom: 4px;
           background-color: white;
           -webkit-transition: transform .4s;
@@ -144,17 +159,6 @@ a {
           -webkit-transform: translateX(6.7em);
           -ms-transform: translateX(6.7em);
           transform: translateX(6.7em);
-        }
-
-        .form-close-btn {
-          padding: 0;
-          line-height: 0;
-          background: none;
-          justify-self: end;
-  
-          img {
-            height: 40px;
-          }
         }
       }
 
