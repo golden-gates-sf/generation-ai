@@ -10,7 +10,8 @@ $gradient1: -webkit-linear-gradient(right, #31d7da, #ed20d2);
 $gradient2: -webkit-linear-gradient(right, #31d7da, #ed20d2);
 
 $background-color: #130515;
-$light-blue: #92f0f7;
+$menu-blue: #92f0f7;
+$logo-blue: #cae0e8;
 
 * {
   margin: 0;
@@ -27,6 +28,22 @@ body {
   background-color: $background-color;
 }
 
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $logo-blue;
+  border: none;
+  border-radius: 10px;  
+}
+
 button {
   border-radius: 35.5px;
   border: none;
@@ -38,7 +55,7 @@ button {
   font-weight: bold;
   font-family: $font-main;
 }
-  
+
 button:hover {
   cursor: pointer;
 }
@@ -73,7 +90,7 @@ a {
       height: 70vh;
       padding: 10px 60px;
       border-radius: 16px;
-      box-shadow: 1px 1px 14px $light-blue;
+      box-shadow: 1px 1px 14px $menu-blue;
       position: relative;
 
       .form-close-btn {
@@ -105,13 +122,13 @@ a {
           justify-self: end;
           align-self: end;
         }
-        
+
         .switch input {
           opacity: 0;
           width: 0;
           height: 0;
         }
-        
+
         .slider {
           position: absolute;
           cursor: pointer;
@@ -120,8 +137,8 @@ a {
           right: 0;
           bottom: 0;
           background-color: #ccc;
-          -webkit-transition: transform .4s;
-          transition: transform .4s;
+          -webkit-transition: transform 0.4s;
+          transition: transform 0.4s;
           border-radius: 10px;
           color: #130515;
           display: flex;
@@ -129,7 +146,7 @@ a {
           justify-content: end;
           padding: 0 1.4em 0 2.2em;
         }
-        
+
         .slider:before {
           position: absolute;
           content: "";
@@ -138,23 +155,23 @@ a {
           left: 8px;
           bottom: 4px;
           background-color: white;
-          -webkit-transition: transform .4s;
-          transition: transform .4s;
+          -webkit-transition: transform 0.4s;
+          transition: transform 0.4s;
           border-radius: 10px;
           content: attr(data-before);
           display: flex;
           align-items: center;
           justify-content: center;
         }
-        
+
         input:checked + .slider {
-          background-color: $light-blue;
+          background-color: $menu-blue;
         }
-        
+
         input:focus + .slider {
-          box-shadow: 0 0 1px $light-blue;
+          box-shadow: 0 0 1px $menu-blue;
         }
-        
+
         input:checked + .slider:before {
           -webkit-transform: translateX(6.7em);
           -ms-transform: translateX(6.7em);
@@ -166,7 +183,7 @@ a {
         display: flex;
         flex-direction: column;
         gap: 1.3em;
-        
+
         .form-input {
           width: 28vw;
           border-radius: 10px;
@@ -177,7 +194,7 @@ a {
           color: #130515;
         }
       }
-      
+
       .form-submit-container {
         display: flex;
         flex-direction: column;
@@ -193,8 +210,8 @@ a {
           // background: none;
           // border: 1px solid $light-blue;
           // color: $light-blue;
-          transition: background .3s ease-out;
-          transition: color .3s ease-out;
+          transition: background 0.3s ease-out;
+          transition: color 0.3s ease-out;
 
           &:hover {
             color: #fff;
@@ -207,7 +224,7 @@ a {
             // border: none;
           }
         }
-  
+
         .private-policy-container {
           text-align: left;
           max-width: 26vw;
@@ -222,7 +239,7 @@ a {
         label {
           text-align: center;
           max-width: 30vw;
-          font-size: 12px
+          font-size: 12px;
         }
       }
     }
@@ -252,7 +269,7 @@ header {
 
     span {
       min-width: 200px;
-      color: #cae0e8;
+      color: $logo-blue;
       font-family: $font-logo;
       font-size: 22px;
       font-weight: bold;
@@ -511,9 +528,8 @@ footer {
   width: 100%;
   height: 4px;
   border-radius: 4px;
-  background-color: $light-blue;
+  background-color: $menu-blue;
   transition: all 0.35s ease-in-out;
-
 
   .nav-open & {
     width: 145%;

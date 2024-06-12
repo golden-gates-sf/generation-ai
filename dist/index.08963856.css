@@ -29,6 +29,22 @@ body {
   background-color: #130515;
 }
 
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #cae0e8;
+  border: none;
+  border-radius: 10px;
+}
+
 button {
   letter-spacing: .24px;
   white-space: nowrap;
