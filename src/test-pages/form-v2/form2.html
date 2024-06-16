@@ -3,22 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.scss" />
-    <script type="module" src="./js/index.js" defer></script>
+    <link rel="stylesheet" href="./form2.scss" />
+    <script type="module" src="/src/js/index.js" defer></script>
     <title>Поколение AI</title>
   </head>
   <body>
     <div class="main-container">
       <section class="form-overlay">
         <form>
-          <button class="form-close-btn" id="form-close-btn"><img src="./img/icons/menu_icons/close-cross.svg" /></button>
           <div class="form-header">
-            <label class="switch">
-              <input type="checkbox" id="switch-checkbox">
-              <span class="slider" id="slider"></span>
-            </label>
+            <span>Присоединяйся!</span>
+            <button class="form-close-btn" id="form-close-btn"><img src="./img/icons/menu_icons/close-cross.svg" /></button>
           </div>
-          <div class="form-input-container" id="form-input-container">
+          <div class="form-input-container">
             <input
               type="text"
               name="Username"
@@ -34,9 +31,9 @@
               class="form-input"
             />
           </div>
-          <div class="form-submit-container" id="form-submit-container">
-            <button type="submit" class="form-submit-btn" id="form-submit-btn">Подписаться</button>  
-            <label for="form-submit-btn">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+          <div class="form-submit-container">
+            <button type="submit" class="form-submit-btn" name="Form-Submit">Подписаться</button>  
+            <label for="Form-Submit">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
           </div>
         </form>
       </section>

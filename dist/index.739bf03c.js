@@ -630,10 +630,46 @@ langBtn.addEventListener("click", ()=>{
     langDropList.style.visibility === "visible" ? langDropList.style.visibility = "hidden" : langDropList.style.visibility = "visible";
 });
 registerBtn.addEventListener("click", ()=>{
+    const formInputContainer = document.getElementById("form-input-container");
+    const slider = document.getElementById("slider");
+    const switchCheckbox = document.querySelector("#switch-checkbox");
+    const submitContainer = document.getElementById("form-submit-container");
+    let switchMode = "Email";
+    slider.innerText = "Telegram";
+    slider.setAttribute("data-before", switchMode);
+    switchCheckbox.checked = false;
     formOverlay.style.visibility = "visible";
+    const closeFormBtn = document.getElementById("form-close-btn");
+    closeFormBtn.addEventListener("click", ()=>{
+        switchMode = 0;
+        formOverlay.style.visibility = "hidden";
+    });
+    slider.addEventListener("click", (e)=>{
+        slider.setAttribute("data-before", switchMode);
+        if (switchMode === "Email") {
+            slider.style.justifyContent = "start";
+            slider.innerText = "Email";
+            // formInputContainer.remove();
+            // submitContainer.remove();
+            // slider.insertAdjacentHTML("afterend", `
+            //     <label for="form-submit-btn">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
+            //     <button type="submit" class="form-submit-btn" id="telegram-btn">Открыть телеграм</button>  
+            //   `)
+            switchMode = "Telegram";
+            slider.setAttribute("data-before", switchMode);
+        } else {
+            slider.style.justifyContent = "end";
+            slider.innerText = "Telegram";
+            switchMode = "Email";
+            slider.setAttribute("data-before", switchMode);
+        }
+    });
+//   if (formOverlay.style.visibility !== "visible")
+//     formOverlay.classList.add("form--open");
+//   else formOverlay.classList.remove("form--open");
 });
 
-},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/icons/menu_icons/close-cross.svg":"f8krO","../img/icons/menu_icons/menu-bold-icon-lb.svg":"eBvSE"}],"6M0L2":[function(require,module,exports) {
+},{"typed.js":"6M0L2","../img/icons/menu_icons/close-cross.svg":"f8krO","../img/icons/menu_icons/menu-bold-icon-lb.svg":"eBvSE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6M0L2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>i);
