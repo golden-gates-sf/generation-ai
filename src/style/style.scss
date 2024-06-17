@@ -444,9 +444,11 @@ nav {
 
     a {
       font-size: 2.8rem;
+      padding-left: 20px;
 
       @include for-phone-only {
         font-size: 2.2rem;
+        padding-left: 8px;
       }
 
       &:hover {
@@ -458,6 +460,14 @@ nav {
     }
 
     li {
+      img {
+        opacity: 0;
+
+        @include for-phone-only {
+          height: 17px;
+        }
+      }
+
       .navlink-gradient2:hover {
         background: rgb(74, 196, 28);
         background: -moz-linear-gradient(
@@ -503,6 +513,12 @@ nav {
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+    }
+  }
+
+  li:hover {
+    img {
+      opacity: 1;
     }
   }
 

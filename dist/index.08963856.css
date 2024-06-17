@@ -457,11 +457,13 @@ nav ul {
 }
 
 nav ul a {
+  padding-left: 20px;
   font-size: 2.8rem;
 }
 
 @media (width <= 1250px) {
   nav ul a {
+    padding-left: 8px;
     font-size: 2.2rem;
   }
 }
@@ -469,6 +471,16 @@ nav ul a {
 nav ul a:hover {
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient(right, #31d7da, #ed20d2) text;
+}
+
+nav ul li img {
+  opacity: 0;
+}
+
+@media (width <= 1250px) {
+  nav ul li img {
+    height: 17px;
+  }
 }
 
 nav ul li .navlink-gradient2:hover {
@@ -481,6 +493,10 @@ nav ul li .navlink-gradient3:hover {
   filter: progid:DXImageTransform. Microsoft. gradient(startColorstr= "#ff8e0c", endColorstr= "#31d7da", GradientType= 1);
   -webkit-text-fill-color: transparent;
   background: linear-gradient(90deg, #ff8e0c 22%, #31d7da 100%) text;
+}
+
+nav li:hover img {
+  opacity: 1;
 }
 
 nav .nav-footer {

@@ -587,10 +587,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _typedJs = require("typed.js");
 var _typedJsDefault = parcelHelpers.interopDefault(_typedJs);
-var _closeCrossSvg = require("../img/icons/menu_icons/close-cross.svg");
-var _closeCrossSvgDefault = parcelHelpers.interopDefault(_closeCrossSvg);
-var _menuBoldIconLbSvg = require("../img/icons/menu_icons/menu-bold-icon-lb.svg");
-var _menuBoldIconLbSvgDefault = parcelHelpers.interopDefault(_menuBoldIconLbSvg);
 const typedStrings = [
     "\u0438\u0434\u0435\u0442\u0435 \u0432 \u043D\u043E\u0433\u0443 \u0441\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C",
     "\u0434\u0435\u043B\u0435\u0433\u0438\u0440\u0443\u0435\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
@@ -633,7 +629,6 @@ registerBtn.addEventListener("click", ()=>{
     const formInputContainer = document.getElementById("form-input-container");
     const slider = document.getElementById("slider");
     const switchCheckbox = document.querySelector("#switch-checkbox");
-    const submitContainer = document.getElementById("form-submit-container");
     let switchMode = "Email";
     slider.innerText = "Telegram";
     slider.setAttribute("data-before", switchMode);
@@ -650,11 +645,6 @@ registerBtn.addEventListener("click", ()=>{
             slider.style.justifyContent = "start";
             slider.innerText = "Email";
             formInputContainer.innerHTML = "";
-            // submitContainer.remove();
-            // slider.insertAdjacentHTML("afterend", `
-            //     <label for="form-submit-btn">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
-            //     <button type="submit" class="form-submit-btn" id="telegram-btn">Открыть телеграм</button>  
-            //   `)
             formInputContainer.insertAdjacentHTML("afterbegin", `
          <input
               type="text"
@@ -695,7 +685,7 @@ registerBtn.addEventListener("click", ()=>{
 //   else formOverlay.classList.remove("form--open");
 });
 
-},{"typed.js":"6M0L2","../img/icons/menu_icons/close-cross.svg":"f8krO","../img/icons/menu_icons/menu-bold-icon-lb.svg":"eBvSE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6M0L2":[function(require,module,exports) {
+},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6M0L2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>i);
@@ -925,47 +915,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"f8krO":[function(require,module,exports) {
-module.exports = require("6840934f10104090").getBundleURL("g05j8") + "close-cross.7caa1f84.svg" + "?" + Date.now();
-
-},{"6840934f10104090":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"eBvSE":[function(require,module,exports) {
-module.exports = require("c15cea92b9603af8").getBundleURL("g05j8") + "menu-bold-icon-lb.ed567859.svg" + "?" + Date.now();
-
-},{"c15cea92b9603af8":"lgJ39"}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
+},{}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
 
 //# sourceMappingURL=index.739bf03c.js.map
