@@ -2,6 +2,8 @@
 @import url("/src/fonts/Cyrillic/multitypes-lines-columns/multilines-font.css");
 @import url("/src/fonts/gotham_pro/gotham-pro-font.css");
 
+@import "./mixins.scss";
+
 $font-logo: "One Day";
 $font-h1-ru: "Multilines";
 $font-main: "Gotham Pro";
@@ -22,10 +24,18 @@ $logo-blue: #cae0e8;
 html {
   color: #fff;
   font-family: $font-main;
+
+  @include for-phone-only {
+    font-size: 10px;
+  }
 }
 
 body {
   background-color: $background-color;
+
+  @include for-phone-only {
+    max-width: 400px;
+  }
 }
 
 body::-webkit-scrollbar {
@@ -93,6 +103,11 @@ a {
       box-shadow: 1px 1px 14px $menu-blue;
       position: relative;
 
+      @include for-phone-only {
+        height: 60vh;
+        padding: 10px 20px;
+      }
+
       .form-close-btn {
         padding: 0;
         line-height: 0;
@@ -105,6 +120,10 @@ a {
 
         img {
           height: 40px;
+
+          @include for-phone-only {
+            height: 30px;
+          }
         }
       }
 
@@ -121,6 +140,11 @@ a {
           height: 50px;
           justify-self: end;
           align-self: end;
+
+          @include for-phone-only {
+            width: 18em;
+            height: 40px;
+          }
         }
 
         .switch input {
@@ -150,7 +174,7 @@ a {
         .slider:before {
           position: absolute;
           content: "";
-          height: 80%;
+          height: 84%;
           width: 8.3em;
           left: 8px;
           bottom: 4px;
@@ -162,14 +186,19 @@ a {
           display: flex;
           align-items: center;
           justify-content: center;
+
+          @include for-phone-only {
+            width: 9.6em;
+            height: 80%;
+          }
         }
 
         input:checked + .slider {
-          background-color: $menu-blue;
+          background-color: #ccc;
         }
 
         input:focus + .slider {
-          box-shadow: 0 0 1px $menu-blue;
+          box-shadow: 0 0 1px #ccc;
         }
 
         input:checked + .slider:before {
@@ -192,6 +221,11 @@ a {
           padding: 0.5rem 1.6rem;
           font-family: $font-main;
           color: #130515;
+
+          @include for-phone-only {
+            width: 280px;
+            font-size: 12px;
+          }
         }
       }
 
@@ -200,6 +234,10 @@ a {
         flex-direction: column;
         align-items: center;
         gap: 1.2em;
+
+        @include for-phone-only {
+          gap: 2em;
+        }
 
         .form-submit-btn {
           max-width: 180px;
@@ -212,6 +250,12 @@ a {
           // color: $light-blue;
           transition: background 0.3s ease-out;
           transition: color 0.3s ease-out;
+
+          @include for-phone-only {
+            width: 130px;
+            font-size: 12px;
+            padding: 4px 14px;
+          }
 
           &:hover {
             color: #fff;
@@ -240,6 +284,11 @@ a {
           text-align: center;
           max-width: 30vw;
           font-size: 12px;
+
+          @include for-phone-only {
+            font-size: 10px;
+            max-width: none;
+          }
         }
       }
     }
@@ -257,14 +306,28 @@ header {
   min-width: 100%;
   background-color: $background-color;
 
+  @include for-phone-only {
+    padding: 1rem;
+    gap: 1.8rem;
+    // grid-template-columns: 9fr 1fr 1fr;
+  }
+
   a {
     justify-self: start;
     display: flex;
     align-items: center;
     gap: 16px;
 
+    @include for-phone-only {
+      gap: 8px;
+    }
+
     img {
       height: 56px;
+
+      @include for-phone-only {
+        height: 28px;
+      }
     }
 
     span {
@@ -273,6 +336,11 @@ header {
       font-family: $font-logo;
       font-size: 22px;
       font-weight: bold;
+
+      @include for-phone-only {
+        min-width: 100px;
+        font-size: 11px;
+      }
     }
   }
 
@@ -285,11 +353,19 @@ header {
 
     img {
       height: 40px;
+
+      @include for-phone-only {
+        height: 20px;
+      }
     }
   }
 
   .logo-link {
     padding-left: 40px;
+
+    @include for-phone-only {
+      padding-left: 18px;
+    }
   }
 
   .languages-container {
@@ -311,6 +387,11 @@ header {
       flex-direction: column;
       gap: 1.1rem;
       visibility: hidden;
+
+      @include for-phone-only {
+        top: 50px;
+        font-size: 9px;
+      }
 
       li {
         padding: 0 px;
@@ -338,6 +419,12 @@ nav {
   visibility: hidden;
   overflow-y: auto;
 
+  @include for-phone-only {
+    top: 5vh;
+    padding: 0 18px;
+    min-width: 360px;
+  }
+
   a {
     color: #fff;
     // transition: all 1s ease-in-out;
@@ -351,8 +438,16 @@ nav {
     gap: 70px;
     list-style: none;
 
+    @include for-phone-only {
+      gap: 55px;
+    }
+
     a {
       font-size: 2.8rem;
+
+      @include for-phone-only {
+        font-size: 2.2rem;
+      }
 
       &:hover {
         background: -webkit-linear-gradient(right, #31d7da, #ed20d2);
@@ -422,8 +517,16 @@ nav {
       gap: 14px;
       align-items: center;
 
+      @include for-phone-only {
+        gap: 9px;
+      }
+
       img {
         height: 36px;
+
+        @include for-phone-only {
+          height: 24px;
+        }
       }
     }
   }
@@ -432,14 +535,23 @@ nav {
 main {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  // align-items: center;
   min-height: 92vh;
   padding: 60px 0 40px 140px;
   gap: 30px;
 
+  @include for-phone-only {
+    padding: 0 20px 20px 20px;
+  }
+
   button {
     color: #fff;
     max-width: 260px;
+
+    @include for-phone-only {
+      font-size: 16px;
+      width: 160px;
+    }
   }
 
   img {
@@ -454,6 +566,12 @@ main {
     gap: 50px;
     max-width: 980px;
     text-align: left;
+    justify-content: center;
+
+    @include for-phone-only {
+      max-width: 300px;
+      align-items: center;
+    }
 
     .main-text {
       margin-bottom: 50px;
@@ -461,6 +579,10 @@ main {
 
       h1 {
         font-size: 50px;
+
+        @include for-phone-only {
+          font-size: 25px;
+        }
       }
 
       span {
@@ -474,6 +596,11 @@ main {
     p {
       font-size: 20px;
       font-optical-sizing: auto;
+
+      @include for-phone-only {
+        text-align: center;
+        font-size: 12px;
+      }
     }
 
     .register-btn {
@@ -491,11 +618,27 @@ section {
   display: flex;
   justify-content: center;
   padding: 30px;
+
+  @include for-phone-only {
+    padding: 40px 18px;
+  }
+}
+
+.video-section {
+  img {
+    @include for-phone-only {
+      height: 160px;
+    }
+  }
 }
 
 .logo-section {
   img {
     height: 200px;
+
+    @include for-phone-only {
+      height: 140px;
+    }
   }
 }
 
@@ -507,10 +650,31 @@ section {
   }
 }
 
+.mission-section {
+
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    
+    p {
+      padding: 0 10px;
+    }
+
+  }
+}
+
 footer {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  text-align: center;
+
+  @include for-phone-only {
+    margin-top: 40px;
+  }
 }
 
 .menu-toggle {
@@ -520,6 +684,12 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   gap: 0px;
+
+  @include for-phone-only {
+    height: 13px;
+    width: 14.5px;
+    justify-self: center;
+  }
 }
 
 .menu-toggle-bar {
@@ -531,16 +701,28 @@ footer {
   background-color: $menu-blue;
   transition: all 0.35s ease-in-out;
 
+  @include for-phone-only {
+    height: 2px;
+  }
+
   .nav-open & {
     width: 145%;
     &.menu-toggle-bar--top {
       transform: translate(0, 11px) rotate(315deg);
+
+      @include for-phone-only {
+        transform: translate(0, 5.5px) rotate(315deg);
+      }
     }
     &.menu-toggle-bar--middle {
       opacity: 0;
     }
     &.menu-toggle-bar--bottom {
       transform: translate(0, -11px) rotate(-315deg);
+
+      @include for-phone-only {
+        transform: translate(0, -5.5px) rotate(-315deg);
+      }
     }
   }
 }
