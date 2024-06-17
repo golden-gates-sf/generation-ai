@@ -74,19 +74,45 @@ registerBtn.addEventListener("click", () => {
       if (switchMode === "Email") {
         slider.style.justifyContent = "start";
         slider.innerText = "Email";
-        // formInputContainer.remove();
+        formInputContainer.innerHTML = "";
         // submitContainer.remove();
         // slider.insertAdjacentHTML("afterend", `
         //     <label for="form-submit-btn">Я соглашаюсь на обработку моих персональных данных со стороны Generation AI в соответствии с <a href="#">Политикой конфиденциальности Generation AI</a></label>
         //     <button type="submit" class="form-submit-btn" id="telegram-btn">Открыть телеграм</button>  
           
         //   `)
+        formInputContainer.insertAdjacentHTML("afterbegin", `
+         <input
+              type="text"
+              name="Telegram Username"
+              placeholder="Telegram @username"
+              id="telegram-field"
+              class="form-input"
+          />
+          `)
         switchMode = "Telegram";
         slider.setAttribute("data-before", switchMode);
       }
       else {
         slider.style.justifyContent = "end";
         slider.innerText = "Telegram";
+        formInputContainer.innerHTML = "";
+        formInputContainer.insertAdjacentHTML("afterbegin", `
+          <input
+              type="text"
+              name="Username"
+              placeholder="Your name"
+              id="username-field"
+              class="form-input"
+            />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              id="email-field"
+              class="form-input"
+            />
+          `)
         switchMode = "Email";
         slider.setAttribute("data-before", switchMode);
       }
