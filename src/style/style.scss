@@ -298,7 +298,7 @@ a {
 header {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 5fr 1fr 1fr;
+  grid-template-columns: 6fr 1fr 1fr;
   gap: 3.8rem;
   padding: 18px;
   font-size: 22px;
@@ -640,23 +640,61 @@ section {
   }
 }
 
-.video-section {
+.awards-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 3% 8%;
+  background-color: #000;
+
+  @include for-phone-only {
+    gap: 1.6rem;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 5rem;
+  }
+  
   img {
+    width: 80px;
+
     @include for-phone-only {
-      height: 160px;
+      width: 40px;
+      justify-self: center;
     }
   }
 }
 
-.logo-section {
-  img {
-    height: 200px;
+// .benefits-section-short {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 3rem;
 
-    @include for-phone-only {
-      height: 140px;
-    }
-  }
-}
+//   h2 {
+//     font-size: 2.6em;
+
+//     @include for-phone-only {
+//       font-size: 1.3em;
+//     }
+//   }
+
+//   div {
+//     display: grid;
+//     grid-template-rows: repeat(2, 1fr);
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 20px;
+//     text-align: center;
+//     color: #000;
+//     // height: 60%;
+//     background-color: #fff;
+//     // border-radius: 16px;
+
+//     div {
+//       align-self: center;
+//     }
+//   }
+// }
 
 .steps-section {
   ol {

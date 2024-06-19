@@ -607,6 +607,7 @@ const navMenu = document.querySelector("nav");
 const header = document.querySelector("header");
 const langBtn = document.querySelector(".languages-btn");
 const langDropList = document.querySelector(".languages-droplist");
+const langDiv = document.getElementById("languages-container");
 const formOverlay = document.querySelector(".form-overlay");
 const registerBtn = document.querySelector(".register-btn");
 menuBtn.addEventListener("click", ()=>{
@@ -623,7 +624,26 @@ menuBtn.addEventListener("click", ()=>{
     }
 });
 langBtn.addEventListener("click", ()=>{
-    langDropList.style.visibility === "visible" ? langDropList.style.visibility = "hidden" : langDropList.style.visibility = "visible";
+    if (langDropList.style.visibility === "visible") {
+        console.log("1");
+        langDropList.style.visibility = "hidden";
+        console.log("2");
+    } else {
+        console.log("0");
+        langDropList.style.visibility = "visible";
+        langDropList.focus();
+    }
+// if (langDropList.style.visibility === "hidden") {
+//   langDropList.style.visibility = "visible";
+//   langDropList.focus();
+// }
+// langDropList.style.visibility === "visible"
+//   ? (langDropList.style.visibility = "hidden")
+//   : (langDropList.style.visibility = "visible");
+});
+langDropList.addEventListener("blur", ()=>{
+    console.log("blur");
+    if (langDropList.style.visibility !== "hidden") langDropList.style.visibility = "hidden";
 });
 registerBtn.addEventListener("click", ()=>{
     const formInputContainer = document.getElementById("form-input-container");
