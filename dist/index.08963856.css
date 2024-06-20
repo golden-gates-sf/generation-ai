@@ -60,6 +60,8 @@ body::-webkit-scrollbar-thumb {
 button {
   letter-spacing: .24px;
   white-space: nowrap;
+  color: #fff;
+  background: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
   border: none;
   border-radius: 35.5px;
   padding: .8rem 3rem;
@@ -67,6 +69,13 @@ button {
   font-size: 24px;
   font-weight: bold;
   line-height: 35px;
+}
+
+@media (width <= 1250px) {
+  button {
+    padding: .5rem 2rem;
+    font-size: 14px;
+  }
 }
 
 button:hover {
@@ -248,6 +257,7 @@ a {
 
 .main-container .form-overlay form .form-submit-container .form-submit-btn {
   color: #130515;
+  background: #ccc;
   border-radius: 10px;
   max-width: 180px;
   padding: 8px 24px;
@@ -543,14 +553,12 @@ main {
 }
 
 main button {
-  color: #fff;
   max-width: 260px;
 }
 
 @media (width <= 1250px) {
   main button {
     width: 160px;
-    font-size: 16px;
   }
 }
 
@@ -608,10 +616,6 @@ main .main-text-container p {
   }
 }
 
-main .main-text-container .register-btn {
-  background: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
-}
-
 section {
   justify-content: center;
   padding: 30px;
@@ -654,9 +658,10 @@ section {
 }
 
 .benefits-section-short {
+  background-color: #000;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 6rem;
   display: flex;
 }
 
@@ -670,18 +675,39 @@ section {
   }
 }
 
-.benefits-section-short div {
+.benefits-section-short .benefits-short-container {
   text-align: center;
   color: #000;
-  background-color: #fff;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 2.3rem;
   display: grid;
 }
 
-.benefits-section-short div div {
+@media (width <= 1250px) {
+  .benefits-section-short .benefits-short-container {
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+.benefits-section-short .benefits-short-container div {
+  background-color: #fff;
+  border-radius: 16px;
   align-self: center;
+  width: 16vw;
+  height: 140px;
+  padding: 2rem 1rem;
+  font-size: 1.4em;
+}
+
+@media (width <= 1250px) {
+  .benefits-section-short .benefits-short-container div {
+    width: 80vw;
+    height: 70px;
+    padding: 2.5rem 1rem;
+    font-size: 1.8em;
+  }
 }
 
 .reviews-section {
