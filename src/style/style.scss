@@ -7,6 +7,8 @@
 $font-logo: "One Day";
 $font-h1-ru: "Multilines";
 $font-main: "Gotham Pro";
+$section-headline-size: 2.6em;
+$mobile-section-headline-s: 1.9em;
 
 $gradient1: -webkit-linear-gradient(right, #31d7da, #ed20d2);
 $gradient2: -webkit-linear-gradient(right, #31d7da, #ed20d2);
@@ -51,7 +53,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: $logo-blue;
   border: none;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 button {
@@ -64,6 +66,18 @@ button {
   padding: 0.8rem 3rem;
   font-weight: bold;
   font-family: $font-main;
+  color: #fff;
+  background: rgb(237, 32, 210);
+  background: linear-gradient(
+    90deg,
+    rgba(237, 32, 210, 1) 0%,
+    rgba(49, 215, 218, 1) 87%
+  );
+
+  @include for-phone-only {
+    font-size: 14px;
+    padding: 0.5rem 2rem;
+  }
 }
 
 button:hover {
@@ -245,9 +259,7 @@ a {
           border-radius: 10px;
           padding: 8px 24px;
           color: #130515;
-          // background: none;
-          // border: 1px solid $light-blue;
-          // color: $light-blue;
+          background: #ccc;
           transition: background 0.3s ease-out;
           transition: color 0.3s ease-out;
 
@@ -265,7 +277,6 @@ a {
               rgba(237, 32, 210, 1) 0%,
               rgba(49, 215, 218, 1) 87%
             );
-            // border: none;
           }
         }
 
@@ -298,7 +309,7 @@ a {
 header {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 5fr 1fr 1fr;
+  grid-template-columns: 6fr 1fr 1fr;
   gap: 3.8rem;
   padding: 18px;
   font-size: 22px;
@@ -561,11 +572,9 @@ main {
   }
 
   button {
-    color: #fff;
     max-width: 260px;
 
     @include for-phone-only {
-      font-size: 16px;
       width: 160px;
     }
   }
@@ -618,15 +627,6 @@ main {
         font-size: 12px;
       }
     }
-
-    .register-btn {
-      background: rgb(237, 32, 210);
-      background: linear-gradient(
-        90deg,
-        rgba(237, 32, 210, 1) 0%,
-        rgba(49, 215, 218, 1) 87%
-      );
-    }
   }
 }
 
@@ -640,45 +640,145 @@ section {
   }
 }
 
-.video-section {
+.awards-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 3% 8%;
+  background-color: #000;
+
+  @include for-phone-only {
+    gap: 1.6rem;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 5rem;
+  }
+
   img {
+    width: 80px;
+
     @include for-phone-only {
-      height: 160px;
+      width: 40px;
+      justify-self: center;
     }
   }
 }
 
-.logo-section {
-  img {
-    height: 200px;
+.benefits-section-short {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  background-color: #000;
+
+  h2 {
+    font-size: $section-headline-size;
 
     @include for-phone-only {
+      font-size: $mobile-section-headline-s;
+    }
+  }
+
+  .benefits-short-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.3rem;
+    text-align: center;
+    color: #000;
+
+    @include for-phone-only {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    div {
+      align-self: center;
+      padding: 2rem 1rem;
+      font-size: 1.4em;
+      border-radius: 16px;
+      background-color: #fff;
       height: 140px;
+      width: 16vw;
+
+      @include for-phone-only {
+        width: 80vw;
+        height: 70px;
+        font-size: 1.8em;
+        padding: 2.5rem 1rem;
+      }
     }
   }
 }
 
-.steps-section {
-  ol {
-    display: flex;
-    list-style-position: inside;
-    gap: 20px;
-  }
-}
-
-.mission-section {
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  padding-top: 4rem;
 
   @include for-phone-only {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     text-align: center;
-    
+
     p {
       padding: 0 10px;
     }
+  }
 
+  h2 {
+    font-size: $section-headline-size;
+
+    @include for-phone-only {
+      font-size: $mobile-section-headline-s;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.4rem;
+    padding: 5rem 0;
+    flex-wrap: wrap;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 24%;
+      border-radius: 16px;
+      padding: 2.4rem 2rem;
+      gap: 3.1rem;
+      min-width: 260px;
+
+      span {
+        font-weight: bold;
+        font-size: 1.8em;
+      }
+
+      p {
+        color: #130515;
+        padding: 2.7rem 0;
+        font-size: 1.1em;
+      }
+    }
+
+    .review-box1 {
+      background-color: #7099d7;
+    }
+
+    .review-box2 {
+      background-color: #db7be7;
+    }
+
+    .review-box3 {
+      background-color: #31d7da;
+    }
   }
 }
 

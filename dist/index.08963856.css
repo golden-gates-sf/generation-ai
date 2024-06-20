@@ -60,6 +60,8 @@ body::-webkit-scrollbar-thumb {
 button {
   letter-spacing: .24px;
   white-space: nowrap;
+  color: #fff;
+  background: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
   border: none;
   border-radius: 35.5px;
   padding: .8rem 3rem;
@@ -67,6 +69,13 @@ button {
   font-size: 24px;
   font-weight: bold;
   line-height: 35px;
+}
+
+@media (width <= 1250px) {
+  button {
+    padding: .5rem 2rem;
+    font-size: 14px;
+  }
 }
 
 button:hover {
@@ -248,6 +257,7 @@ a {
 
 .main-container .form-overlay form .form-submit-container .form-submit-btn {
   color: #130515;
+  background: #ccc;
   border-radius: 10px;
   max-width: 180px;
   padding: 8px 24px;
@@ -295,7 +305,7 @@ a {
 header {
   background-color: #130515;
   grid-template-rows: 1fr;
-  grid-template-columns: 5fr 1fr 1fr;
+  grid-template-columns: 6fr 1fr 1fr;
   align-items: center;
   gap: 3.8rem;
   min-width: 100%;
@@ -543,14 +553,12 @@ main {
 }
 
 main button {
-  color: #fff;
   max-width: 260px;
 }
 
 @media (width <= 1250px) {
   main button {
     width: 160px;
-    font-size: 16px;
   }
 }
 
@@ -608,10 +616,6 @@ main .main-text-container p {
   }
 }
 
-main .main-text-container .register-btn {
-  background: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
-}
-
 section {
   justify-content: center;
   padding: 30px;
@@ -622,40 +626,161 @@ section {
   section {
     padding: 40px 18px;
   }
-
-  .video-section img {
-    height: 160px;
-  }
 }
 
-.logo-section img {
-  height: 200px;
-}
-
-@media (width <= 1250px) {
-  .logo-section img {
-    height: 140px;
-  }
-}
-
-.steps-section ol {
-  gap: 20px;
-  list-style-position: inside;
+.awards-section {
+  background-color: #000;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3% 8%;
   display: flex;
 }
 
 @media (width <= 1250px) {
-  .mission-section {
+  .awards-section {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    padding: 3rem 5rem;
+    display: grid;
+  }
+}
+
+.awards-section img {
+  width: 80px;
+}
+
+@media (width <= 1250px) {
+  .awards-section img {
+    justify-self: center;
+    width: 40px;
+  }
+}
+
+.benefits-section-short {
+  background-color: #000;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  display: flex;
+}
+
+.benefits-section-short h2 {
+  font-size: 2.6em;
+}
+
+@media (width <= 1250px) {
+  .benefits-section-short h2 {
+    font-size: 1.9em;
+  }
+}
+
+.benefits-section-short .benefits-short-container {
+  text-align: center;
+  color: #000;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.3rem;
+  display: grid;
+}
+
+@media (width <= 1250px) {
+  .benefits-section-short .benefits-short-container {
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+.benefits-section-short .benefits-short-container div {
+  background-color: #fff;
+  border-radius: 16px;
+  align-self: center;
+  width: 16vw;
+  height: 140px;
+  padding: 2rem 1rem;
+  font-size: 1.4em;
+}
+
+@media (width <= 1250px) {
+  .benefits-section-short .benefits-short-container div {
+    width: 80vw;
+    height: 70px;
+    padding: 2.5rem 1rem;
+    font-size: 1.8em;
+  }
+}
+
+.reviews-section {
+  background-color: #000;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  display: flex;
+}
+
+@media (width <= 1250px) {
+  .reviews-section {
     text-align: center;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     display: flex;
   }
 
-  .mission-section p {
+  .reviews-section p {
     padding: 0 10px;
   }
+}
+
+.reviews-section h2 {
+  font-size: 2.6em;
+}
+
+@media (width <= 1250px) {
+  .reviews-section h2 {
+    font-size: 1.9em;
+  }
+}
+
+.reviews-section div {
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 3.4rem;
+  padding: 5rem 0;
+  display: flex;
+}
+
+.reviews-section div div {
+  border-radius: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.1rem;
+  width: 24%;
+  min-width: 260px;
+  padding: 2.4rem 2rem;
+  display: flex;
+}
+
+.reviews-section div div span {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.reviews-section div div p {
+  color: #130515;
+  padding: 2.7rem 0;
+  font-size: 1.1em;
+}
+
+.reviews-section div .review-box1 {
+  background-color: #7099d7;
+}
+
+.reviews-section div .review-box2 {
+  background-color: #db7be7;
+}
+
+.reviews-section div .review-box3 {
+  background-color: #31d7da;
 }
 
 footer {
