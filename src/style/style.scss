@@ -7,6 +7,8 @@
 $font-logo: "One Day";
 $font-h1-ru: "Multilines";
 $font-main: "Gotham Pro";
+$section-headline-size: 2.6em;
+$mobile-section-headline-s: 1.9em;
 
 $gradient1: -webkit-linear-gradient(right, #31d7da, #ed20d2);
 $gradient2: -webkit-linear-gradient(right, #31d7da, #ed20d2);
@@ -665,58 +667,104 @@ section {
   }
 }
 
-// .benefits-section-short {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   gap: 3rem;
+.benefits-section-short {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 
-//   h2 {
-//     font-size: 2.6em;
+  h2 {
+    font-size: $section-headline-size;
 
-//     @include for-phone-only {
-//       font-size: 1.3em;
-//     }
-//   }
+    @include for-phone-only {
+      font-size: $mobile-section-headline-s;
+    }
+  }
 
-//   div {
-//     display: grid;
-//     grid-template-rows: repeat(2, 1fr);
-//     grid-template-columns: repeat(4, 1fr);
-//     gap: 20px;
-//     text-align: center;
-//     color: #000;
-//     // height: 60%;
-//     background-color: #fff;
-//     // border-radius: 16px;
-
-//     div {
-//       align-self: center;
-//     }
-//   }
-// }
-
-.steps-section {
-  ol {
-    display: flex;
-    list-style-position: inside;
+  div {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    text-align: center;
+    color: #000;
+    // height: 60%;
+    background-color: #fff;
+    // border-radius: 16px;
+
+    div {
+      align-self: center;
+    }
   }
 }
 
-.mission-section {
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  padding-top: 4rem;
 
   @include for-phone-only {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     text-align: center;
     
     p {
       padding: 0 10px;
     }
+  }
 
+  h2 {
+    font-size: $section-headline-size;
+
+    @include for-phone-only {
+      font-size: $mobile-section-headline-s;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.4rem;
+    padding: 5rem 0;
+    flex-wrap: wrap;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 24%;
+      border-radius: 16px;
+      padding: 2.4rem 2rem;
+      gap: 3.1rem;
+      min-width: 260px;
+
+      span {
+        font-weight: bold;
+        font-size: 1.8em;
+      }
+      
+      p {
+        color: #130515;
+        padding: 2.7rem 0;
+        font-size: 1.1em;
+      }
+    }
+
+    .review-box1 {
+      background-color: #7099d7;
+    }
+
+    .review-box2 {
+      background-color: #db7be7;
+    }
+
+    .review-box3 {
+      background-color: #31d7da;
+    }
   }
 }
 

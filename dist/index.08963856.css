@@ -653,24 +653,108 @@ section {
   }
 }
 
-.steps-section ol {
+.benefits-section-short {
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  display: flex;
+}
+
+.benefits-section-short h2 {
+  font-size: 2.6em;
+}
+
+@media (width <= 1250px) {
+  .benefits-section-short h2 {
+    font-size: 1.9em;
+  }
+}
+
+.benefits-section-short div {
+  text-align: center;
+  color: #000;
+  background-color: #fff;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  list-style-position: inside;
+  display: grid;
+}
+
+.benefits-section-short div div {
+  align-self: center;
+}
+
+.reviews-section {
+  background-color: #000;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
   display: flex;
 }
 
 @media (width <= 1250px) {
-  .mission-section {
+  .reviews-section {
     text-align: center;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     display: flex;
   }
 
-  .mission-section p {
+  .reviews-section p {
     padding: 0 10px;
   }
+}
+
+.reviews-section h2 {
+  font-size: 2.6em;
+}
+
+@media (width <= 1250px) {
+  .reviews-section h2 {
+    font-size: 1.9em;
+  }
+}
+
+.reviews-section div {
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 3.4rem;
+  padding: 5rem 0;
+  display: flex;
+}
+
+.reviews-section div div {
+  border-radius: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.1rem;
+  width: 24%;
+  min-width: 260px;
+  padding: 2.4rem 2rem;
+  display: flex;
+}
+
+.reviews-section div div span {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.reviews-section div div p {
+  color: #130515;
+  padding: 2.7rem 0;
+  font-size: 1.1em;
+}
+
+.reviews-section div .review-box1 {
+  background-color: #7099d7;
+}
+
+.reviews-section div .review-box2 {
+  background-color: #db7be7;
+}
+
+.reviews-section div .review-box3 {
+  background-color: #31d7da;
 }
 
 footer {
