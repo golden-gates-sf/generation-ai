@@ -49,14 +49,19 @@ menuBtn.addEventListener("click", () => {
 
 // Languages List
 
-langBtn.addEventListener("click", () => {
-  if (langDropList.style.visibility === "visible") {
-    console.log("1");
-    langDropList.style.visibility = "hidden";
-    console.log("2");
-  } else {
-    console.log("0");
+langBtn.addEventListener("click", (event) => {
+  if (langDropList.style.visibility !== "visible") {
     langDropList.style.visibility = "visible";
+    event.stopPropagation();
+
+    window.onclick = (e) => {
+      if (e.target == langDropList || langDropList.contains(e.target)) {
+        return
+      }
+      langDropList.style.visibility = "hidden";
+      window.onclick = null
+    }
+
     langDropList.focus();
   }
 
@@ -68,12 +73,6 @@ langBtn.addEventListener("click", () => {
   // langDropList.style.visibility === "visible"
   //   ? (langDropList.style.visibility = "hidden")
   //   : (langDropList.style.visibility = "visible");
-});
-
-langDropList.addEventListener("blur", () => {
-  console.log("blur");
-  if (langDropList.style.visibility !== "hidden")
-    langDropList.style.visibility = "hidden";
 });
 
 // Register Form
