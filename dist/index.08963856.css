@@ -184,10 +184,24 @@ a {
   inset: 0;
 }
 
+.main-container .form-overlay form .form-header .slider.telegram-icon:before {
+  content: "";
+  background-image: url("telegram-icon.66f8aba8.svg");
+  background-size: 28%;
+}
+
+.main-container .form-overlay form .form-header .slider.email-icon:before {
+  content: "";
+  background-image: url("email-icon.7d14d5b2.svg");
+}
+
 .main-container .form-overlay form .form-header .slider:before {
   content: "";
   content: attr(data-before);
   background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   border-radius: 10px;
   justify-content: center;
   align-items: center;

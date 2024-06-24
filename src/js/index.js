@@ -85,6 +85,7 @@ registerBtn.addEventListener("click", () => {
 
   let switchMode = "Email";
   slider.innerText = "Telegram";
+  slider.classList.add("email-icon");
   slider.setAttribute("data-before", switchMode);
   switchCheckbox.checked = false;
 
@@ -101,6 +102,8 @@ registerBtn.addEventListener("click", () => {
     if (switchMode === "Email") {
       slider.style.justifyContent = "start";
       slider.innerText = "Email";
+      slider.classList.remove("email-icon");
+      slider.classList.add("telegram-icon");
       formInputContainer.innerHTML = "";
       formInputContainer.insertAdjacentHTML(
         "afterbegin",
@@ -119,6 +122,8 @@ registerBtn.addEventListener("click", () => {
     } else {
       slider.style.justifyContent = "end";
       slider.innerText = "Telegram";
+      slider.classList.add("email-icon");
+      slider.classList.add("telegram-icon");
       formInputContainer.innerHTML = "";
       formInputContainer.insertAdjacentHTML(
         "afterbegin",

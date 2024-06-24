@@ -184,9 +184,23 @@ a {
           justify-content: end;
           padding: 0 1.4em 0 2.2em;
         }
+        
+        .slider.telegram-icon::before {
+          content: "";
+          background-size: 28%;
+          background-image: url('../img/icons/form_icons/telegram-icon.svg');         
+        }
+
+        .slider.email-icon::before {
+          content: "";
+          background-image: url('../img/icons/form_icons/email-icon.svg');         
+        }
 
         .slider:before {
           position: absolute;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
           content: "";
           height: 84%;
           width: 8.3em;
