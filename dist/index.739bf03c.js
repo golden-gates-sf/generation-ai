@@ -587,6 +587,20 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _typedJs = require("typed.js");
 var _typedJsDefault = parcelHelpers.interopDefault(_typedJs);
+// Benefits Cards Generation
+var _benefits0Webp = require("../img/benefits_section/benefits_0.webp");
+var _benefits0WebpDefault = parcelHelpers.interopDefault(_benefits0Webp);
+var _benefits1Webp = require("../img/benefits_section/benefits_1.webp");
+var _benefits1WebpDefault = parcelHelpers.interopDefault(_benefits1Webp);
+var _benefits2Webp = require("../img/benefits_section/benefits_2.webp");
+var _benefits2WebpDefault = parcelHelpers.interopDefault(_benefits2Webp);
+var _benefits3Webp = require("../img/benefits_section/benefits_3.webp");
+var _benefits3WebpDefault = parcelHelpers.interopDefault(_benefits3Webp);
+var _benefits4Webp = require("../img/benefits_section/benefits_4.webp");
+var _benefits4WebpDefault = parcelHelpers.interopDefault(_benefits4Webp);
+var _benefits5Webp = require("../img/benefits_section/benefits_5.webp");
+var _benefits5WebpDefault = parcelHelpers.interopDefault(_benefits5Webp);
+// Typed Text
 const typedStrings = [
     "\u0438\u0434\u0435\u0442\u0435 \u0432 \u043D\u043E\u0433\u0443 \u0441\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C",
     "\u0434\u0435\u043B\u0435\u0433\u0438\u0440\u0443\u0435\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
@@ -610,6 +624,7 @@ const langDropList = document.querySelector(".languages-droplist");
 const langDiv = document.getElementById("languages-container");
 const formOverlay = document.querySelector(".form-overlay");
 const registerBtn = document.querySelector(".register-btn");
+// NavBar
 menuBtn.addEventListener("click", ()=>{
     if (navMenu.style.visibility !== "visible") {
         navMenu.style.visibility = "visible";
@@ -623,34 +638,27 @@ menuBtn.addEventListener("click", ()=>{
         menuBtn.classList.remove("nav-open");
     }
 });
-langBtn.addEventListener("click", ()=>{
-    if (langDropList.style.visibility === "visible") {
-        console.log("1");
-        langDropList.style.visibility = "hidden";
-        console.log("2");
-    } else {
-        console.log("0");
+// Languages List
+langBtn.addEventListener("click", (event)=>{
+    if (langDropList.style.visibility !== "visible") {
         langDropList.style.visibility = "visible";
+        event.stopPropagation();
+        window.onclick = (e)=>{
+            if (e.target == langDropList || langDropList.contains(e.target)) return;
+            langDropList.style.visibility = "hidden";
+            window.onclick = null;
+        };
         langDropList.focus();
     }
-// if (langDropList.style.visibility === "hidden") {
-//   langDropList.style.visibility = "visible";
-//   langDropList.focus();
-// }
-// langDropList.style.visibility === "visible"
-//   ? (langDropList.style.visibility = "hidden")
-//   : (langDropList.style.visibility = "visible");
 });
-langDropList.addEventListener("blur", ()=>{
-    console.log("blur");
-    if (langDropList.style.visibility !== "hidden") langDropList.style.visibility = "hidden";
-});
+// Register Form
 registerBtn.addEventListener("click", ()=>{
     const formInputContainer = document.getElementById("form-input-container");
     const slider = document.getElementById("slider");
     const switchCheckbox = document.querySelector("#switch-checkbox");
     let switchMode = "Email";
     slider.innerText = "Telegram";
+    slider.classList.add("email-icon");
     slider.setAttribute("data-before", switchMode);
     switchCheckbox.checked = false;
     formOverlay.style.visibility = "visible";
@@ -664,6 +672,8 @@ registerBtn.addEventListener("click", ()=>{
         if (switchMode === "Email") {
             slider.style.justifyContent = "start";
             slider.innerText = "Email";
+            slider.classList.remove("email-icon");
+            slider.classList.add("telegram-icon");
             formInputContainer.innerHTML = "";
             formInputContainer.insertAdjacentHTML("afterbegin", `
          <input
@@ -679,6 +689,8 @@ registerBtn.addEventListener("click", ()=>{
         } else {
             slider.style.justifyContent = "end";
             slider.innerText = "Telegram";
+            slider.classList.add("email-icon");
+            slider.classList.add("telegram-icon");
             formInputContainer.innerHTML = "";
             formInputContainer.insertAdjacentHTML("afterbegin", `
           <input
@@ -704,8 +716,100 @@ registerBtn.addEventListener("click", ()=>{
 //     formOverlay.classList.add("form--open");
 //   else formOverlay.classList.remove("form--open");
 });
+const benefitsCards = [
+    {
+        h1: "Job Security",
+        text1: "Secure your future by mastering AI skills, safeguarding your position amidst rising automation",
+        h2: "Financial Stability",
+        text2: "Improve your financial outlook with AI skills that open higher-paying job opportunities",
+        btnText: "Register to know how",
+        img: {
+            src: (0, _benefits0WebpDefault.default),
+            alt: "Happy Work Man"
+        }
+    },
+    {
+        h1: "Industry Relevance",
+        text1: "Stay relevant in your industry by acquiring essential AI knowledge that employers demand",
+        h2: "Future-proof skills",
+        text2: "Equip yourself with future-proof skills that ensure longevity in evolving job markets",
+        btnText: "Become an expert",
+        img: {
+            src: (0, _benefits1WebpDefault.default),
+            alt: "AI Engineering"
+        }
+    },
+    {
+        h1: "Anxiety Reduction",
+        text1: "Reduce employment stress by being prepared for AI-driven job markets",
+        h2: "Economic Resilience",
+        text2: "Build economic resilience by staying employable amidst technological disruption",
+        btnText: "Join us to learn more",
+        img: {
+            src: (0, _benefits2WebpDefault.default),
+            alt: "Happy Working People"
+        }
+    },
+    {
+        h1: "Hands-on Experience",
+        text1: "Gain practical experience through projects and case studies aligned with industry needs",
+        h2: "Community Support",
+        text2: "Join a supportive community of learners and professionals dedicated to AI excellence",
+        btnText: `I am ready, let's go`,
+        img: {
+            src: (0, _benefits3WebpDefault.default),
+            alt: "Developers Community"
+        }
+    },
+    {
+        h1: "Market Trends Insights",
+        text1: "Leverage our research to understand and capitalize on upcoming AI job opportunities",
+        h2: "Resource Access",
+        text2: "Access comprehensive AI resources and tools to enhance your learning experience",
+        btnText: "Get access now",
+        img: {
+            src: (0, _benefits4WebpDefault.default),
+            alt: "Observation"
+        }
+    },
+    {
+        h1: "Employment Assistance",
+        text1: "Get personalized support to land lucrative positions requiring AI expertise",
+        h2: "Project Opportunities",
+        text2: "Get matched with exciting AI projects that allow you to apply your newfound skills",
+        btnText: `Sounds good, I'm in`,
+        img: {
+            src: (0, _benefits5WebpDefault.default),
+            alt: "Employment Assistance"
+        }
+    }
+];
+const benefitsLongContainer = document.getElementById("benefits-long-container");
+benefitsCards.forEach((el, i)=>{
+    i % 2 === 0 ? benefitsLongContainer.insertAdjacentHTML("beforeend", `
+      <div class="benefit-card">
+            <div class="benefit-card__text-box">
+              <h3>${el.h1}</h3>
+              <span>${el.text1}</span>
+              <h3>${el.h2}</h3>
+              <span>${el.text2}</span>
+              <button>${el.btnText}</button>
+            </div>
+            <img src="${el.img.src}" alt="${el.img.alt}">
+          </div>`) : benefitsLongContainer.insertAdjacentHTML("beforeend", `
+      <div class="benefit-card">
+            <img src="${el.img.src}" alt="${el.img.alt}">
+            <div class="benefit-card__text-box">
+              <h3>${el.h1}</h3>
+              <span>${el.text1}</span>
+              <h3>${el.h2}</h3>
+              <span>${el.text2}</span>
+              <button>${el.btnText}</button>
+            </div>
+          </div>`);
+});
 
-},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6M0L2":[function(require,module,exports) {
+},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/benefits_section/benefits_0.webp":"apYEN","../img/benefits_section/benefits_1.webp":"8CKna","../img/benefits_section/benefits_2.webp":"lATyb","../img/benefits_section/benefits_3.webp":"aHp5x","../img/benefits_section/benefits_4.webp":"7H2FQ","../img/benefits_section/benefits_5.webp":"aK3sy"}],"6M0L2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>i);
@@ -935,6 +1039,59 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
+},{}],"apYEN":[function(require,module,exports) {
+module.exports = require("860bbe601458b694").getBundleURL("g05j8") + "benefits_0.93cc8fda.webp" + "?" + Date.now();
+
+},{"860bbe601458b694":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"8CKna":[function(require,module,exports) {
+module.exports = require("782f0ec0a3adcd1c").getBundleURL("g05j8") + "benefits_1.05394648.webp" + "?" + Date.now();
+
+},{"782f0ec0a3adcd1c":"lgJ39"}],"lATyb":[function(require,module,exports) {
+module.exports = require("357540f3c010b6e3").getBundleURL("g05j8") + "benefits_2.62d80326.webp" + "?" + Date.now();
+
+},{"357540f3c010b6e3":"lgJ39"}],"aHp5x":[function(require,module,exports) {
+module.exports = require("8407d18f2b46e442").getBundleURL("g05j8") + "benefits_3.8ab33dff.webp" + "?" + Date.now();
+
+},{"8407d18f2b46e442":"lgJ39"}],"7H2FQ":[function(require,module,exports) {
+module.exports = require("56dd3e6e2e4906f0").getBundleURL("g05j8") + "benefits_4.f545674b.webp" + "?" + Date.now();
+
+},{"56dd3e6e2e4906f0":"lgJ39"}],"aK3sy":[function(require,module,exports) {
+module.exports = require("2cf80b7b014e99d4").getBundleURL("g05j8") + "benefits_5.77ab97a8.webp" + "?" + Date.now();
+
+},{"2cf80b7b014e99d4":"lgJ39"}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
 
 //# sourceMappingURL=index.739bf03c.js.map
