@@ -640,6 +640,24 @@ section {
   }
 }
 
+.main-section {
+  h2 {
+    font-size: $section-headline-size;
+
+    @include for-phone-only {
+      font-size: $mobile-section-headline-s;
+    }
+  }
+
+  h3 {
+    font-size: 1.8em;
+
+    @include for-phone-only {
+      font-size: 1em;
+    }
+  } 
+}
+
 .awards-section {
   display: flex;
   justify-content: space-around;
@@ -696,17 +714,72 @@ section {
     div {
       align-self: center;
       padding: 2rem 1rem;
-      font-size: 1.4em;
       border-radius: 16px;
       background-color: #fff;
-      height: 140px;
-      width: 16vw;
+      height: 160px;
+      width: 18vw;
 
       @include for-phone-only {
         width: 80vw;
         height: 70px;
         font-size: 1.8em;
         padding: 2.5rem 1rem;
+      }
+    }
+  }
+}
+
+.benefits-long-section {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: $section-headline-size;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .benefits-long-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.8rem 0;
+    gap: 2.4rem;
+
+    .benefit-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 2.4rem;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 16px;
+      color: #130515;
+      max-width: 70vw;
+
+      img {
+        height: 60vh;
+        border-radius: 16px;
+      }
+
+      .benefit-card__text-box {
+        padding-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.4rem;
+
+        span {
+          font-size: 1.3em;
+        }
+
+        button {
+          max-width: 360px;
+      
+          @include for-phone-only {
+            width: 180px;
+          }
+        }
       }
     }
   }
