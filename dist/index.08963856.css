@@ -774,9 +774,21 @@ section {
   display: flex;
 }
 
+@media (width <= 1250px) {
+  .benefits-long-section .benefits-long-container .benefit-card {
+    flex-direction: column;
+  }
+}
+
 .benefits-long-section .benefits-long-container .benefit-card img {
   border-radius: 16px;
   height: 60vh;
+}
+
+@media (width <= 1250px) {
+  .benefits-long-section .benefits-long-container .benefit-card img {
+    height: 30vh;
+  }
 }
 
 .benefits-long-section .benefits-long-container .benefit-card .benefit-card__text-box {

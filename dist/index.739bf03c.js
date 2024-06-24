@@ -650,13 +650,6 @@ langBtn.addEventListener("click", (event)=>{
         };
         langDropList.focus();
     }
-// if (langDropList.style.visibility === "hidden") {
-//   langDropList.style.visibility = "visible";
-//   langDropList.focus();
-// }
-// langDropList.style.visibility === "visible"
-//   ? (langDropList.style.visibility = "hidden")
-//   : (langDropList.style.visibility = "visible");
 });
 // Register Form
 registerBtn.addEventListener("click", ()=>{

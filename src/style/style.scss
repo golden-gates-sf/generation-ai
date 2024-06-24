@@ -771,9 +771,17 @@ section {
       color: #130515;
       max-width: 70vw;
 
+      @include for-phone-only {
+        flex-direction: column;
+      }
+
       img {
         height: 60vh;
         border-radius: 16px;
+
+        @include for-phone-only {
+          height: 30vh;
+        }
       }
 
       .benefit-card__text-box {
