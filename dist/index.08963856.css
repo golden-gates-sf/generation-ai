@@ -889,14 +889,8 @@ section {
 footer {
   text-align: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin: 2rem;
   display: flex;
-}
-
-@media (width <= 1250px) {
-  footer {
-    margin-top: 40px;
-  }
 }
 
 .menu-toggle {
