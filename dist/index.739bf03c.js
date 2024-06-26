@@ -587,7 +587,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _typedJs = require("typed.js");
 var _typedJsDefault = parcelHelpers.interopDefault(_typedJs);
-// Benefits Cards Generation
 var _benefits0Webp = require("../img/benefits_section/benefits_0.webp");
 var _benefits0WebpDefault = parcelHelpers.interopDefault(_benefits0Webp);
 var _benefits1Webp = require("../img/benefits_section/benefits_1.webp");
@@ -623,92 +622,8 @@ const langBtn = document.querySelector(".languages-btn");
 const langDropList = document.querySelector(".languages-droplist");
 const langDiv = document.getElementById("languages-container");
 const formOverlay = document.querySelector(".form-overlay");
-const registerBtn = document.querySelector(".register-btn");
-// NavBar
-menuBtn.addEventListener("click", ()=>{
-    if (navMenu.style.visibility !== "visible") {
-        navMenu.style.visibility = "visible";
-        header.style.position = "fixed";
-        header.style.top = "0";
-        header.style.zIndex = "100";
-        menuBtn.classList.add("nav-open");
-    } else {
-        navMenu.style.visibility = "hidden";
-        header.style.position = "static";
-        menuBtn.classList.remove("nav-open");
-    }
-});
-// Languages List
-langBtn.addEventListener("click", (event)=>{
-    if (langDropList.style.visibility !== "visible") {
-        langDropList.style.visibility = "visible";
-        event.stopPropagation();
-        window.onclick = (e)=>{
-            if (e.target == langDropList || langDropList.contains(e.target)) return;
-            langDropList.style.visibility = "hidden";
-            window.onclick = null;
-        };
-        langDropList.focus();
-    }
-});
-// Register Form
-registerBtn.addEventListener("click", ()=>{
-    const formInputContainer = document.getElementById("form-input-container");
-    const slider = document.getElementById("slider");
-    const switchCheckbox = document.querySelector("#switch-checkbox");
-    const form = document.querySelector("form");
-    let switchMode = "Email";
-    slider.innerText = "Telegram";
-    slider.classList.add("email-icon");
-    slider.setAttribute("data-before", switchMode);
-    switchCheckbox.checked = false;
-    formOverlay.style.visibility = "visible";
-    const closeFormBtn = document.getElementById("form-close-btn");
-    closeFormBtn.addEventListener("click", ()=>{
-        switchMode = 0;
-        formOverlay.style.visibility = "hidden";
-    });
-    slider.addEventListener("click", (e)=>{
-        slider.setAttribute("data-before", switchMode);
-        form.classList.toggle("form-tg-mode");
-        if (switchMode === "Email") {
-            slider.style.justifyContent = "start";
-            slider.innerText = "Email";
-            slider.classList.remove("email-icon");
-            slider.classList.add("telegram-icon");
-            formInputContainer.innerHTML = "";
-            switchMode = "Telegram";
-            slider.setAttribute("data-before", switchMode);
-        } else {
-            slider.style.justifyContent = "end";
-            slider.innerText = "Telegram";
-            slider.classList.add("email-icon");
-            slider.classList.add("telegram-icon");
-            formInputContainer.innerHTML = "";
-            formInputContainer.insertAdjacentHTML("afterbegin", `
-          <input
-              type="text"
-              name="Username"
-              placeholder="Your name"
-              id="username-field"
-              class="form-input"
-            />
-            <input
-              type="email"
-              name="Email"
-              placeholder="Email"
-              id="email-field"
-              class="form-input"
-            />
-          `);
-            switchMode = "Email";
-            slider.setAttribute("data-before", switchMode);
-        }
-    });
-//   if (formOverlay.style.visibility !== "visible")
-//     formOverlay.classList.add("form--open");
-//   else formOverlay.classList.remove("form--open");
-});
+const registerBtn = document.querySelectorAll(".register-btn");
+// Benefits Cards Generation
 const benefitsCards = [
     {
         h1: "Job Security",
@@ -786,7 +701,7 @@ benefitsCards.forEach((el, i)=>{
               <span>${el.text1}</span>
               <h3>${el.h2}</h3>
               <span>${el.text2}</span>
-              <button>${el.btnText}</button>
+              <button class="register-btn">${el.btnText}</button>
             </div>
             <img src="${el.img.src}" alt="${el.img.alt}">
           </div>`) : benefitsLongContainer.insertAdjacentHTML("beforeend", `
@@ -797,9 +712,96 @@ benefitsCards.forEach((el, i)=>{
               <span>${el.text1}</span>
               <h3>${el.h2}</h3>
               <span>${el.text2}</span>
-              <button>${el.btnText}</button>
+              <button class="register-btn">${el.btnText}</button>
             </div>
           </div>`);
+});
+// NavBar
+menuBtn.addEventListener("click", ()=>{
+    if (navMenu.style.visibility !== "visible") {
+        navMenu.style.visibility = "visible";
+        header.style.position = "fixed";
+        header.style.top = "0";
+        header.style.zIndex = "100";
+        menuBtn.classList.add("nav-open");
+    } else {
+        navMenu.style.visibility = "hidden";
+        header.style.position = "static";
+        menuBtn.classList.remove("nav-open");
+    }
+});
+// Languages List
+langBtn.addEventListener("click", (event)=>{
+    if (langDropList.style.visibility !== "visible") {
+        langDropList.style.visibility = "visible";
+        event.stopPropagation();
+        window.onclick = (e)=>{
+            if (e.target == langDropList || langDropList.contains(e.target)) return;
+            langDropList.style.visibility = "hidden";
+            window.onclick = null;
+        };
+        langDropList.focus();
+    }
+});
+// Register Form
+registerBtn.forEach((btn)=>{
+    btn.addEventListener("click", ()=>{
+        const formInputContainer = document.getElementById("form-input-container");
+        const slider = document.getElementById("slider");
+        const switchCheckbox = document.querySelector("#switch-checkbox");
+        const form = document.querySelector("form");
+        let switchMode = "Email";
+        slider.innerText = "Telegram";
+        slider.classList.add("email-icon");
+        slider.setAttribute("data-before", switchMode);
+        switchCheckbox.checked = false;
+        formOverlay.style.visibility = "visible";
+        console.log("form");
+        const closeFormBtn = document.getElementById("form-close-btn");
+        closeFormBtn.addEventListener("click", (e)=>{
+            switchMode = "Email";
+            e.preventDefault();
+            formOverlay.style.visibility = "hidden";
+            form.classList.remove("form-tg-mode");
+        });
+        slider.addEventListener("click", (e)=>{
+            slider.setAttribute("data-before", switchMode);
+            form.classList.toggle("form-tg-mode");
+            if (switchMode === "Email") {
+                slider.style.justifyContent = "start";
+                slider.innerText = "Email";
+                slider.classList.remove("email-icon");
+                slider.classList.add("telegram-icon");
+                formInputContainer.innerHTML = "";
+                switchMode = "Telegram";
+                slider.setAttribute("data-before", switchMode);
+            } else {
+                slider.style.justifyContent = "end";
+                slider.innerText = "Telegram";
+                slider.classList.add("email-icon");
+                slider.classList.remove("telegram-icon");
+                formInputContainer.innerHTML = "";
+                formInputContainer.insertAdjacentHTML("afterbegin", `
+            <input
+                type="text"
+                name="Username"
+                placeholder="Your name"
+                id="username-field"
+                class="form-input"
+              />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Email"
+                id="email-field"
+                class="form-input"
+              />
+            `);
+                switchMode = "Email";
+                slider.setAttribute("data-before", switchMode);
+            }
+        });
+    });
 });
 
 },{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/benefits_section/benefits_0.webp":"apYEN","../img/benefits_section/benefits_1.webp":"8CKna","../img/benefits_section/benefits_2.webp":"lATyb","../img/benefits_section/benefits_3.webp":"aHp5x","../img/benefits_section/benefits_4.webp":"7H2FQ","../img/benefits_section/benefits_5.webp":"aK3sy"}],"6M0L2":[function(require,module,exports) {
