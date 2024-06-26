@@ -109,17 +109,16 @@ a {
       flex-direction: column;
       background-color: #130515f6;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       gap: 7vh;
       height: 70vh;
-      padding: 10px 60px;
+      padding: 5.2rem 1.5rem;
       border-radius: 16px;
       box-shadow: 1px 1px 14px $menu-blue;
       position: relative;
 
       @include for-phone-only {
         height: 60vh;
-        padding: 10px 20px;
       }
 
       .form-close-btn {
@@ -184,16 +183,16 @@ a {
           justify-content: end;
           padding: 0 1.4em 0 2.2em;
         }
-        
+
         .slider.telegram-icon::before {
           content: "";
           background-size: 28%;
-          background-image: url('../img/icons/form_icons/telegram-icon.svg');         
+          background-image: url("../img/icons/form_icons/telegram-icon.svg");
         }
 
         .slider.email-icon::before {
           content: "";
-          background-image: url('../img/icons/form_icons/email-icon.svg');         
+          background-image: url("../img/icons/form_icons/email-icon.svg");
         }
 
         .slider:before {
@@ -294,16 +293,18 @@ a {
           }
         }
 
-        .private-policy-container {
-          text-align: left;
-          max-width: 26vw;
-          align-self: end;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: start;
-          font-size: 12px;
+        .form-tg-link {
+          text-align: center;
+          line-height: 35px;
+          letter-spacing: 0.24px;
+          white-space: nowrap;
+          font-weight: bold;
+          display: none;
         }
+
+        // .form-tg-link--active {
+        //   display: block;
+        // }
 
         label {
           text-align: center;
@@ -316,6 +317,22 @@ a {
           }
         }
       }
+
+      &.form-tg-mode {
+        gap: 5vh;
+
+        .form-submit-container {
+          gap: 2em;
+
+          #form-submit-btn {
+            display: none;
+          }
+      
+          .form-tg-link {
+            display: block;
+          }
+        }
+      } 
     }
   }
 }
@@ -669,7 +686,7 @@ section {
     @include for-phone-only {
       font-size: 1em;
     }
-  } 
+  }
 }
 
 .awards-section {
@@ -724,7 +741,7 @@ section {
       display: flex;
       flex-direction: column;
     }
-    
+
     div {
       align-self: center;
       padding: 2rem 1rem;
@@ -797,7 +814,7 @@ section {
 
         button {
           max-width: 360px;
-      
+
           @include for-phone-only {
             width: 180px;
           }
@@ -879,6 +896,7 @@ section {
 
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 2rem;
   text-align: center;

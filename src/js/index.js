@@ -72,6 +72,7 @@ registerBtn.addEventListener("click", () => {
   const formInputContainer = document.getElementById("form-input-container");
   const slider = document.getElementById("slider");
   const switchCheckbox = document.querySelector("#switch-checkbox");
+  const form = document.querySelector("form");
 
   let switchMode = "Email";
   slider.innerText = "Telegram";
@@ -88,6 +89,7 @@ registerBtn.addEventListener("click", () => {
 
   slider.addEventListener("click", (e) => {
     slider.setAttribute("data-before", switchMode);
+    form.classList.toggle("form-tg-mode");
 
     if (switchMode === "Email") {
       slider.style.justifyContent = "start";
@@ -95,18 +97,6 @@ registerBtn.addEventListener("click", () => {
       slider.classList.remove("email-icon");
       slider.classList.add("telegram-icon");
       formInputContainer.innerHTML = "";
-      formInputContainer.insertAdjacentHTML(
-        "afterbegin",
-        `
-         <input
-              type="text"
-              name="Telegram Username"
-              placeholder="Telegram @username"
-              id="telegram-field"
-              class="form-input"
-          />
-          `
-      );
       switchMode = "Telegram";
       slider.setAttribute("data-before", switchMode);
     } else {
