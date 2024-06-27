@@ -899,6 +899,106 @@ section {
   background-color: #31d7da;
 }
 
+.qa-section .accordion-items-container {
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+
+.qa-section .accordion-items-container .accordion {
+  cursor: pointer;
+  border-bottom: 1px solid #ffffff4d;
+  width: 100%;
+  padding: 0 12px;
+  transition: background-color .5s;
+}
+
+.qa-section .accordion-items-container .accordion.sky:hover {
+  background-color: #31d7da;
+}
+
+.qa-section .accordion-items-container .accordion.blue:hover {
+  background-color: #7099d7;
+}
+
+.qa-section .accordion-items-container .accordion.pink:hover {
+  background-color: #db7be7;
+}
+
+.qa-section .accordion-items-container .accordion.active.sky {
+  background-color: #31d7da;
+}
+
+.qa-section .accordion-items-container .accordion.active.blue {
+  background-color: #7099d7;
+}
+
+.qa-section .accordion-items-container .accordion.active.pink {
+  background-color: #db7be7;
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 80px;
+  font-size: 16px;
+  display: flex;
+  position: relative;
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer .accordion__icon {
+  margin-right: 10px;
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer .accordion__icon:after {
+  content: "";
+  background: #fff;
+  width: 2px;
+  height: 16px;
+  transition: transform .5s ease-out;
+  display: block;
+  transform: rotate(90deg);
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer .accordion__icon:before {
+  content: "";
+  background: #fff;
+  width: 2px;
+  height: 16px;
+  transition: transform .5s ease-out;
+  display: block;
+  position: absolute;
+  transform: rotate(0);
+}
+
+.qa-section .accordion-items-container .accordion__body {
+  will-change: max-height;
+  max-height: 0;
+  transition: all .5s ease-out;
+  overflow: hidden;
+}
+
+.qa-section .accordion-items-container .accordion__body p {
+  color: #fff;
+  white-space: pre-line;
+  padding: 1em 0;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.qa-section .accordion-items-container .accordion.active .accordion__body {
+  max-height: 25em;
+}
+
+.qa-section .accordion-items-container .accordion.active .accordion__icon:after {
+  transform: rotate(270deg) !important;
+}
+
+.qa-section .accordion-items-container .accordion.active .accordion__icon:before {
+  transform: rotate(-270deg) !important;
+}
+
 footer {
   text-align: center;
   flex-direction: column;

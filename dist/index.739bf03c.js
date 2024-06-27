@@ -599,6 +599,8 @@ var _benefits4Webp = require("../img/benefits_section/benefits_4.webp");
 var _benefits4WebpDefault = parcelHelpers.interopDefault(_benefits4Webp);
 var _benefits5Webp = require("../img/benefits_section/benefits_5.webp");
 var _benefits5WebpDefault = parcelHelpers.interopDefault(_benefits5Webp);
+var _accordeonJs = require("./accordeon.js");
+var _accordeonJsDefault = parcelHelpers.interopDefault(_accordeonJs);
 // Typed Text
 const typedStrings = [
     "\u0438\u0434\u0435\u0442\u0435 \u0432 \u043D\u043E\u0433\u0443 \u0441\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C",
@@ -804,7 +806,7 @@ registerBtn.forEach((btn)=>{
     });
 });
 
-},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/benefits_section/benefits_0.webp":"apYEN","../img/benefits_section/benefits_1.webp":"8CKna","../img/benefits_section/benefits_2.webp":"lATyb","../img/benefits_section/benefits_3.webp":"aHp5x","../img/benefits_section/benefits_4.webp":"7H2FQ","../img/benefits_section/benefits_5.webp":"aK3sy"}],"6M0L2":[function(require,module,exports) {
+},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/benefits_section/benefits_0.webp":"apYEN","../img/benefits_section/benefits_1.webp":"8CKna","../img/benefits_section/benefits_2.webp":"lATyb","../img/benefits_section/benefits_3.webp":"aHp5x","../img/benefits_section/benefits_4.webp":"7H2FQ","../img/benefits_section/benefits_5.webp":"aK3sy","./accordeon.js":"hNTUk"}],"6M0L2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>i);
@@ -1087,6 +1089,82 @@ module.exports = require("56dd3e6e2e4906f0").getBundleURL("g05j8") + "benefits_4
 },{"56dd3e6e2e4906f0":"lgJ39"}],"aK3sy":[function(require,module,exports) {
 module.exports = require("2cf80b7b014e99d4").getBundleURL("g05j8") + "benefits_5.77ab97a8.webp" + "?" + Date.now();
 
-},{"2cf80b7b014e99d4":"lgJ39"}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
+},{"2cf80b7b014e99d4":"lgJ39"}],"hNTUk":[function(require,module,exports) {
+var _data = require("./data");
+const colors = [
+    "pink",
+    "sky",
+    "blue"
+];
+const accordeonRoot = document.getElementById("accordeon-root");
+(0, _data.accorionData).forEach(({ text, title }, i)=>{
+    accordeonRoot.insertAdjacentHTML("beforeend", `
+        <div class="accordion ${colors[i % colors.length]}">
+           <div class="accordion__titlecontainer">
+              <p class="acc-title">${title}</p>
+              <div class="accordion__icon"></div>
+           </div>
+           <div class="accordion__body">
+              <p class="text">${text}</p>
+           </div>
+        </div>     
+    `);
+});
+const elems = document.querySelectorAll(".accordion");
+elems.forEach((el)=>{
+    el.addEventListener("click", ()=>{
+        elems.forEach((elem)=>el != elem ? elem.classList.remove("active") : null);
+        el.classList.toggle("active");
+    });
+});
+
+},{"./data":"kq51T"}],"kq51T":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "accorionData", ()=>accorionData);
+const accorionData = [
+    {
+        title: "Why should I invest time learning AI skills?",
+        text: "AI skills ensure job security and future-proof your career. Stay relevant and seize high-demand opportunities in the AI-driven world."
+    },
+    {
+        title: "Is the market for AI jobs really growing?",
+        text: "Absolutely! The demand for AI expertise is skyrocketing, and we're here to help you tap into these emerging opportunities."
+    },
+    {
+        title: "Are the educational services suitable for beginners?",
+        text: "Yes, our comprehensive programs cater to all levels, from beginners to advanced, ensuring everyone can master AI skills."
+    },
+    {
+        title: "Are there practical applications of the skills I learn?",
+        text: "Absolutely! We offer project opportunities and collaborative projects to apply and enhance your AI skills in real-world scenarios."
+    },
+    {
+        title: "Will AI skills really increase my income?",
+        text: "Yes, proficiency in AI is highly sought-after in today's market, significantly enhancing your earning potential and career growth opportunities."
+    },
+    {
+        title: "How can Generation AI help me find a job?",
+        text: "Our employment assistance services connect you to promising AI-centric roles, ensuring successful job placements and career advancement."
+    },
+    {
+        title: "How does Generation AI help with professional networking?",
+        text: "We provide opportunities to expand your professional network by connecting you with leading AI professionals and organizations."
+    },
+    {
+        title: "What if I don\u2019t secure a job after training?",
+        text: "Our dedicated job placement and employment assistance services maximize your chances of finding the perfect AI-related role for you."
+    },
+    {
+        title: "How can I keep up with constant AI advancements?",
+        text: "Our ongoing education and upskilling offerings ensure you stay informed and educated on the latest AI advancements and technologies."
+    },
+    {
+        title: "What makes your educational services stand out?",
+        text: "Expert-led programs, validated certifications, and practical applications set our educational services apart, ensuring valuable skill acquisition for AI careers."
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
 
 //# sourceMappingURL=index.739bf03c.js.map

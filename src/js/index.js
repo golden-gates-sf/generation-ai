@@ -5,6 +5,7 @@ import benefitImg2 from "../img/benefits_section/benefits_2.webp";
 import benefitImg3 from "../img/benefits_section/benefits_3.webp";
 import benefitImg4 from "../img/benefits_section/benefits_4.webp";
 import benefitImg5 from "../img/benefits_section/benefits_5.webp";
+import _ from './accordeon.js';
 
 // Typed Text
 
