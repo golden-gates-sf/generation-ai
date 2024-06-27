@@ -1,4 +1,4 @@
-import { accorionData } from './data'
+import { accordionData } from './data'
 
 const colors = [
     'pink',
@@ -6,9 +6,9 @@ const colors = [
     'blue',
 ]
 
-const accordeonRoot = document.getElementById('accordeon-root')
-accorionData.forEach(({text, title}, i) => {
-    accordeonRoot.insertAdjacentHTML('beforeend', `
+const accordionRoot = document.getElementById('accordion-root')
+accordionData.forEach(({text, title}, i) => {
+    accordionRoot.insertAdjacentHTML('beforeend', `
         <div class="accordion ${colors[i % colors.length]}">
            <div class="accordion__titlecontainer">
               <p class="acc-title">${title}</p>

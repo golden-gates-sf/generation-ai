@@ -1,4 +1,4 @@
-export const accorionData = [
+export const accordionData = [
     {
       title: "Why should I invest time learning AI skills?",
       text: "AI skills ensure job security and future-proof your career. Stay relevant and seize high-demand opportunities in the AI-driven world."
