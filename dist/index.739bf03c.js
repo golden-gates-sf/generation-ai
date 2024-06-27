@@ -587,7 +587,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _typedJs = require("typed.js");
 var _typedJsDefault = parcelHelpers.interopDefault(_typedJs);
-// Benefits Cards Generation
 var _benefits0Webp = require("../img/benefits_section/benefits_0.webp");
 var _benefits0WebpDefault = parcelHelpers.interopDefault(_benefits0Webp);
 var _benefits1Webp = require("../img/benefits_section/benefits_1.webp");
@@ -600,6 +599,8 @@ var _benefits4Webp = require("../img/benefits_section/benefits_4.webp");
 var _benefits4WebpDefault = parcelHelpers.interopDefault(_benefits4Webp);
 var _benefits5Webp = require("../img/benefits_section/benefits_5.webp");
 var _benefits5WebpDefault = parcelHelpers.interopDefault(_benefits5Webp);
+var _accordionJs = require("./accordion.js");
+var _accordionJsDefault = parcelHelpers.interopDefault(_accordionJs);
 // Typed Text
 const typedStrings = [
     "\u0438\u0434\u0435\u0442\u0435 \u0432 \u043D\u043E\u0433\u0443 \u0441\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C",
@@ -623,99 +624,8 @@ const langBtn = document.querySelector(".languages-btn");
 const langDropList = document.querySelector(".languages-droplist");
 const langDiv = document.getElementById("languages-container");
 const formOverlay = document.querySelector(".form-overlay");
-const registerBtn = document.querySelector(".register-btn");
-// NavBar
-menuBtn.addEventListener("click", ()=>{
-    if (navMenu.style.visibility !== "visible") {
-        navMenu.style.visibility = "visible";
-        header.style.position = "fixed";
-        header.style.top = "0";
-        header.style.zIndex = "100";
-        menuBtn.classList.add("nav-open");
-    } else {
-        navMenu.style.visibility = "hidden";
-        header.style.position = "static";
-        menuBtn.classList.remove("nav-open");
-    }
-});
-// Languages List
-langBtn.addEventListener("click", (event)=>{
-    if (langDropList.style.visibility !== "visible") {
-        langDropList.style.visibility = "visible";
-        event.stopPropagation();
-        window.onclick = (e)=>{
-            if (e.target == langDropList || langDropList.contains(e.target)) return;
-            langDropList.style.visibility = "hidden";
-            window.onclick = null;
-        };
-        langDropList.focus();
-    }
-});
-// Register Form
-registerBtn.addEventListener("click", ()=>{
-    const formInputContainer = document.getElementById("form-input-container");
-    const slider = document.getElementById("slider");
-    const switchCheckbox = document.querySelector("#switch-checkbox");
-    let switchMode = "Email";
-    slider.innerText = "Telegram";
-    slider.classList.add("email-icon");
-    slider.setAttribute("data-before", switchMode);
-    switchCheckbox.checked = false;
-    formOverlay.style.visibility = "visible";
-    const closeFormBtn = document.getElementById("form-close-btn");
-    closeFormBtn.addEventListener("click", ()=>{
-        switchMode = 0;
-        formOverlay.style.visibility = "hidden";
-    });
-    slider.addEventListener("click", (e)=>{
-        slider.setAttribute("data-before", switchMode);
-        if (switchMode === "Email") {
-            slider.style.justifyContent = "start";
-            slider.innerText = "Email";
-            slider.classList.remove("email-icon");
-            slider.classList.add("telegram-icon");
-            formInputContainer.innerHTML = "";
-            formInputContainer.insertAdjacentHTML("afterbegin", `
-         <input
-              type="text"
-              name="Telegram Username"
-              placeholder="Telegram @username"
-              id="telegram-field"
-              class="form-input"
-          />
-          `);
-            switchMode = "Telegram";
-            slider.setAttribute("data-before", switchMode);
-        } else {
-            slider.style.justifyContent = "end";
-            slider.innerText = "Telegram";
-            slider.classList.add("email-icon");
-            slider.classList.add("telegram-icon");
-            formInputContainer.innerHTML = "";
-            formInputContainer.insertAdjacentHTML("afterbegin", `
-          <input
-              type="text"
-              name="Username"
-              placeholder="Your name"
-              id="username-field"
-              class="form-input"
-            />
-            <input
-              type="email"
-              name="Email"
-              placeholder="Email"
-              id="email-field"
-              class="form-input"
-            />
-          `);
-            switchMode = "Email";
-            slider.setAttribute("data-before", switchMode);
-        }
-    });
-//   if (formOverlay.style.visibility !== "visible")
-//     formOverlay.classList.add("form--open");
-//   else formOverlay.classList.remove("form--open");
-});
+const registerBtn = document.querySelectorAll(".register-btn");
+// Benefits Cards Generation
 const benefitsCards = [
     {
         h1: "Job Security",
@@ -793,7 +703,7 @@ benefitsCards.forEach((el, i)=>{
               <span>${el.text1}</span>
               <h3>${el.h2}</h3>
               <span>${el.text2}</span>
-              <button>${el.btnText}</button>
+              <button class="register-btn">${el.btnText}</button>
             </div>
             <img src="${el.img.src}" alt="${el.img.alt}">
           </div>`) : benefitsLongContainer.insertAdjacentHTML("beforeend", `
@@ -804,12 +714,99 @@ benefitsCards.forEach((el, i)=>{
               <span>${el.text1}</span>
               <h3>${el.h2}</h3>
               <span>${el.text2}</span>
-              <button>${el.btnText}</button>
+              <button class="register-btn">${el.btnText}</button>
             </div>
           </div>`);
 });
+// NavBar
+menuBtn.addEventListener("click", ()=>{
+    if (navMenu.style.visibility !== "visible") {
+        navMenu.style.visibility = "visible";
+        header.style.position = "fixed";
+        header.style.top = "0";
+        header.style.zIndex = "100";
+        menuBtn.classList.add("nav-open");
+    } else {
+        navMenu.style.visibility = "hidden";
+        header.style.position = "static";
+        menuBtn.classList.remove("nav-open");
+    }
+});
+// Languages List
+langBtn.addEventListener("click", (event)=>{
+    if (langDropList.style.visibility !== "visible") {
+        langDropList.style.visibility = "visible";
+        event.stopPropagation();
+        window.onclick = (e)=>{
+            if (e.target == langDropList || langDropList.contains(e.target)) return;
+            langDropList.style.visibility = "hidden";
+            window.onclick = null;
+        };
+        langDropList.focus();
+    }
+});
+// Register Form
+registerBtn.forEach((btn)=>{
+    btn.addEventListener("click", ()=>{
+        const formInputContainer = document.getElementById("form-input-container");
+        const slider = document.getElementById("slider");
+        const switchCheckbox = document.querySelector("#switch-checkbox");
+        const form = document.querySelector("form");
+        let switchMode = "Email";
+        slider.innerText = "Telegram";
+        slider.classList.add("email-icon");
+        slider.setAttribute("data-before", switchMode);
+        switchCheckbox.checked = false;
+        formOverlay.style.visibility = "visible";
+        console.log("form");
+        const closeFormBtn = document.getElementById("form-close-btn");
+        closeFormBtn.addEventListener("click", (e)=>{
+            switchMode = "Email";
+            e.preventDefault();
+            formOverlay.style.visibility = "hidden";
+            form.classList.remove("form-tg-mode");
+        });
+        slider.addEventListener("click", (e)=>{
+            slider.setAttribute("data-before", switchMode);
+            form.classList.toggle("form-tg-mode");
+            if (switchMode === "Email") {
+                slider.style.justifyContent = "start";
+                slider.innerText = "Email";
+                slider.classList.remove("email-icon");
+                slider.classList.add("telegram-icon");
+                formInputContainer.innerHTML = "";
+                switchMode = "Telegram";
+                slider.setAttribute("data-before", switchMode);
+            } else {
+                slider.style.justifyContent = "end";
+                slider.innerText = "Telegram";
+                slider.classList.add("email-icon");
+                slider.classList.remove("telegram-icon");
+                formInputContainer.innerHTML = "";
+                formInputContainer.insertAdjacentHTML("afterbegin", `
+            <input
+                type="text"
+                name="Username"
+                placeholder="Your name"
+                id="username-field"
+                class="form-input"
+              />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Email"
+                id="email-field"
+                class="form-input"
+              />
+            `);
+                switchMode = "Email";
+                slider.setAttribute("data-before", switchMode);
+            }
+        });
+    });
+});
 
-},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/benefits_section/benefits_0.webp":"apYEN","../img/benefits_section/benefits_1.webp":"8CKna","../img/benefits_section/benefits_2.webp":"lATyb","../img/benefits_section/benefits_3.webp":"aHp5x","../img/benefits_section/benefits_4.webp":"7H2FQ","../img/benefits_section/benefits_5.webp":"aK3sy"}],"6M0L2":[function(require,module,exports) {
+},{"typed.js":"6M0L2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../img/benefits_section/benefits_0.webp":"apYEN","../img/benefits_section/benefits_1.webp":"8CKna","../img/benefits_section/benefits_2.webp":"lATyb","../img/benefits_section/benefits_3.webp":"aHp5x","../img/benefits_section/benefits_4.webp":"7H2FQ","../img/benefits_section/benefits_5.webp":"aK3sy","./accordion.js":"7H7LO"}],"6M0L2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>i);
@@ -1092,6 +1089,82 @@ module.exports = require("56dd3e6e2e4906f0").getBundleURL("g05j8") + "benefits_4
 },{"56dd3e6e2e4906f0":"lgJ39"}],"aK3sy":[function(require,module,exports) {
 module.exports = require("2cf80b7b014e99d4").getBundleURL("g05j8") + "benefits_5.77ab97a8.webp" + "?" + Date.now();
 
-},{"2cf80b7b014e99d4":"lgJ39"}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
+},{"2cf80b7b014e99d4":"lgJ39"}],"7H7LO":[function(require,module,exports) {
+var _data = require("./data");
+const colors = [
+    "pink",
+    "sky",
+    "blue"
+];
+const accordionRoot = document.getElementById("accordion-root");
+(0, _data.accordionData).forEach(({ text, title }, i)=>{
+    accordionRoot.insertAdjacentHTML("beforeend", `
+        <div class="accordion ${colors[i % colors.length]}">
+           <div class="accordion__titlecontainer">
+              <p class="acc-title">${title}</p>
+              <div class="accordion__icon"></div>
+           </div>
+           <div class="accordion__body">
+              <p class="text">${text}</p>
+           </div>
+        </div>     
+    `);
+});
+const elems = document.querySelectorAll(".accordion");
+elems.forEach((el)=>{
+    el.addEventListener("click", ()=>{
+        elems.forEach((elem)=>el != elem ? elem.classList.remove("active") : null);
+        el.classList.toggle("active");
+    });
+});
+
+},{"./data":"kq51T"}],"kq51T":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "accordionData", ()=>accordionData);
+const accordionData = [
+    {
+        title: "Why should I invest time learning AI skills?",
+        text: "AI skills ensure job security and future-proof your career. Stay relevant and seize high-demand opportunities in the AI-driven world."
+    },
+    {
+        title: "Is the market for AI jobs really growing?",
+        text: "Absolutely! The demand for AI expertise is skyrocketing, and we're here to help you tap into these emerging opportunities."
+    },
+    {
+        title: "Are the educational services suitable for beginners?",
+        text: "Yes, our comprehensive programs cater to all levels, from beginners to advanced, ensuring everyone can master AI skills."
+    },
+    {
+        title: "Are there practical applications of the skills I learn?",
+        text: "Absolutely! We offer project opportunities and collaborative projects to apply and enhance your AI skills in real-world scenarios."
+    },
+    {
+        title: "Will AI skills really increase my income?",
+        text: "Yes, proficiency in AI is highly sought-after in today's market, significantly enhancing your earning potential and career growth opportunities."
+    },
+    {
+        title: "How can Generation AI help me find a job?",
+        text: "Our employment assistance services connect you to promising AI-centric roles, ensuring successful job placements and career advancement."
+    },
+    {
+        title: "How does Generation AI help with professional networking?",
+        text: "We provide opportunities to expand your professional network by connecting you with leading AI professionals and organizations."
+    },
+    {
+        title: "What if I don\u2019t secure a job after training?",
+        text: "Our dedicated job placement and employment assistance services maximize your chances of finding the perfect AI-related role for you."
+    },
+    {
+        title: "How can I keep up with constant AI advancements?",
+        text: "Our ongoing education and upskilling offerings ensure you stay informed and educated on the latest AI advancements and technologies."
+    },
+    {
+        title: "What makes your educational services stand out?",
+        text: "Expert-led programs, validated certifications, and practical applications set our educational services apart, ensuring valuable skill acquisition for AI careers."
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequiree79d")
 
 //# sourceMappingURL=index.739bf03c.js.map

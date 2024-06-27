@@ -105,11 +105,11 @@ a {
   background-color: #130515f6;
   border-radius: 16px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 7vh;
   height: 70vh;
-  padding: 10px 60px;
+  padding: 5.2rem 1.5rem;
   display: flex;
   position: relative;
   box-shadow: 1px 1px 14px #92f0f7;
@@ -118,7 +118,6 @@ a {
 @media (width <= 1250px) {
   .main-container .form-overlay form {
     height: 60vh;
-    padding: 10px 20px;
   }
 }
 
@@ -292,15 +291,13 @@ a {
   background: linear-gradient(90deg, #ed20d2 0%, #31d7da 87%);
 }
 
-.main-container .form-overlay form .form-submit-container .private-policy-container {
-  text-align: left;
-  flex-direction: row;
-  justify-content: start;
-  align-self: end;
-  align-items: center;
-  max-width: 26vw;
-  font-size: 12px;
-  display: flex;
+.main-container .form-overlay form .form-submit-container .form-tg-link {
+  text-align: center;
+  letter-spacing: .24px;
+  white-space: nowrap;
+  font-weight: bold;
+  line-height: 35px;
+  display: none;
 }
 
 .main-container .form-overlay form .form-submit-container label {
@@ -314,6 +311,22 @@ a {
     max-width: none;
     font-size: 10px;
   }
+}
+
+.main-container .form-overlay form.form-tg-mode {
+  gap: 5vh;
+}
+
+.main-container .form-overlay form.form-tg-mode .form-submit-container {
+  gap: 2em;
+}
+
+.main-container .form-overlay form.form-tg-mode .form-submit-container #form-submit-btn {
+  display: none;
+}
+
+.main-container .form-overlay form.form-tg-mode .form-submit-container .form-tg-link {
+  display: block;
 }
 
 header {
@@ -886,17 +899,114 @@ section {
   background-color: #31d7da;
 }
 
-footer {
-  text-align: center;
-  justify-content: center;
-  margin-bottom: 2rem;
+.qa-section .accordion-items-container {
+  flex-direction: column;
+  width: 100%;
   display: flex;
 }
 
-@media (width <= 1250px) {
-  footer {
-    margin-top: 40px;
-  }
+.qa-section .accordion-items-container .accordion {
+  cursor: pointer;
+  border-bottom: 1px solid #ffffff4d;
+  width: 100%;
+  padding: 0 12px;
+  transition: background-color .5s;
+}
+
+.qa-section .accordion-items-container .accordion.sky:hover {
+  background-color: #31d7da;
+}
+
+.qa-section .accordion-items-container .accordion.blue:hover {
+  background-color: #7099d7;
+}
+
+.qa-section .accordion-items-container .accordion.pink:hover {
+  background-color: #db7be7;
+}
+
+.qa-section .accordion-items-container .accordion.active.sky {
+  background-color: #31d7da;
+}
+
+.qa-section .accordion-items-container .accordion.active.blue {
+  background-color: #7099d7;
+}
+
+.qa-section .accordion-items-container .accordion.active.pink {
+  background-color: #db7be7;
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer {
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 80px;
+  font-size: 16px;
+  display: flex;
+  position: relative;
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer .accordion__icon {
+  margin-right: 10px;
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer .accordion__icon:after {
+  content: "";
+  background: #fff;
+  width: 2px;
+  height: 16px;
+  transition: transform .5s ease-out;
+  display: block;
+  transform: rotate(90deg);
+}
+
+.qa-section .accordion-items-container .accordion__titlecontainer .accordion__icon:before {
+  content: "";
+  background: #fff;
+  width: 2px;
+  height: 16px;
+  transition: transform .5s ease-out;
+  display: block;
+  position: absolute;
+  transform: rotate(0);
+}
+
+.qa-section .accordion-items-container .accordion__body {
+  will-change: max-height;
+  max-height: 0;
+  transition: all .5s ease-out;
+  overflow: hidden;
+}
+
+.qa-section .accordion-items-container .accordion__body p {
+  color: #fff;
+  white-space: pre-line;
+  padding: 1em 0;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.qa-section .accordion-items-container .accordion.active .accordion__body {
+  max-height: 25em;
+}
+
+.qa-section .accordion-items-container .accordion.active .accordion__icon:after {
+  transform: rotate(270deg) !important;
+}
+
+.qa-section .accordion-items-container .accordion.active .accordion__icon:before {
+  transform: rotate(-270deg) !important;
+}
+
+footer {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem;
+  display: flex;
 }
 
 .menu-toggle {
