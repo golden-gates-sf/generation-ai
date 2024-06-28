@@ -25,19 +25,6 @@ const typeOptions = {
   loopCount: Infinity,
 };
 
-const typed = new Typed(".typed-text", typeOptions);
-
-const menuBtn = document.querySelector("#menu-toggle");
-const navMenu = document.querySelector("nav");
-const header = document.querySelector("header");
-
-const langBtn = document.querySelector(".languages-btn");
-const langDropList = document.querySelector(".languages-droplist");
-const langDiv = document.getElementById("languages-container");
-
-const formOverlay = document.querySelector(".form-overlay");
-const registerBtn = document.querySelectorAll(".register-btn");
-
 // Benefits Cards Generation
 
 const benefitsCards = [
@@ -156,6 +143,19 @@ benefitsCards.forEach((el, i) => {
           </div>`
       );
 });
+
+const typed = new Typed(".typed-text", typeOptions);
+
+const menuBtn = document.querySelector("#menu-toggle");
+const navMenu = document.querySelector("nav");
+const header = document.querySelector("header");
+
+const langBtn = document.querySelector(".languages-btn");
+const langDropList = document.querySelector(".languages-droplist");
+const langDiv = document.getElementById("languages-container");
+
+const formOverlay = document.querySelector(".form-overlay");
+const registerBtn = document.querySelectorAll(".register-btn");
 
 // NavBar
 

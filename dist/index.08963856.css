@@ -644,7 +644,9 @@ main .main-text-container p {
 }
 
 section {
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 30px;
   display: flex;
 }
@@ -677,10 +679,9 @@ section {
 
 .awards-section {
   background-color: #000;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   justify-content: space-around;
   padding: 3% 8%;
-  display: flex;
 }
 
 @media (width <= 1250px) {
@@ -706,10 +707,7 @@ section {
 
 .benefits-section-short {
   background-color: #000;
-  flex-direction: column;
-  align-items: center;
   gap: 6rem;
-  display: flex;
 }
 
 .benefits-section-short h2 {
@@ -756,13 +754,7 @@ section {
   }
 }
 
-.benefits-long-section {
-  flex-direction: column;
-  display: flex;
-}
-
 .benefits-long-section h2 {
-  text-align: center;
   margin-top: 2rem;
   font-size: 2.6em;
 }
@@ -828,10 +820,7 @@ section {
 
 .reviews-section {
   background-color: #000;
-  flex-direction: column;
-  align-items: center;
   padding-top: 4rem;
-  display: flex;
 }
 
 @media (width <= 1250px) {
@@ -897,6 +886,31 @@ section {
 
 .reviews-section div .review-box3 {
   background-color: #31d7da;
+}
+
+.bonuses-section {
+  padding: 2rem 1rem;
+}
+
+.bonuses-section h2 {
+  font-size: 2.6em;
+}
+
+.bonuses-section .bonuses-container {
+  flex-direction: row;
+  padding: 4rem 2rem;
+  display: flex;
+}
+
+.bonuses-section .bonuses-container img {
+  border-radius: 16px;
+  height: 80vh;
+}
+
+@media (width <= 1250px) {
+  .bonuses-section .bonuses-container img {
+    height: 30vh;
+  }
 }
 
 .qa-section .accordion-items-container {

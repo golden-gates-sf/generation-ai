@@ -616,15 +616,6 @@ const typeOptions = {
     loop: true,
     loopCount: Infinity
 };
-const typed = new (0, _typedJsDefault.default)(".typed-text", typeOptions);
-const menuBtn = document.querySelector("#menu-toggle");
-const navMenu = document.querySelector("nav");
-const header = document.querySelector("header");
-const langBtn = document.querySelector(".languages-btn");
-const langDropList = document.querySelector(".languages-droplist");
-const langDiv = document.getElementById("languages-container");
-const formOverlay = document.querySelector(".form-overlay");
-const registerBtn = document.querySelectorAll(".register-btn");
 // Benefits Cards Generation
 const benefitsCards = [
     {
@@ -718,6 +709,15 @@ benefitsCards.forEach((el, i)=>{
             </div>
           </div>`);
 });
+const typed = new (0, _typedJsDefault.default)(".typed-text", typeOptions);
+const menuBtn = document.querySelector("#menu-toggle");
+const navMenu = document.querySelector("nav");
+const header = document.querySelector("header");
+const langBtn = document.querySelector(".languages-btn");
+const langDropList = document.querySelector(".languages-droplist");
+const langDiv = document.getElementById("languages-container");
+const formOverlay = document.querySelector(".form-overlay");
+const registerBtn = document.querySelectorAll(".register-btn");
 // NavBar
 menuBtn.addEventListener("click", ()=>{
     if (navMenu.style.visibility !== "visible") {

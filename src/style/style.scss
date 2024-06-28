@@ -663,7 +663,9 @@ main {
 
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 30px;
 
   @include for-phone-only {
@@ -690,7 +692,7 @@ section {
 }
 
 .awards-section {
-  display: flex;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 3% 8%;
@@ -715,9 +717,6 @@ section {
 }
 
 .benefits-section-short {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 6rem;
   background-color: #000;
 
@@ -761,12 +760,8 @@ section {
 }
 
 .benefits-long-section {
-  display: flex;
-  flex-direction: column;
-
   h2 {
     font-size: $section-headline-size;
-    text-align: center;
     margin-top: 2rem;
   }
 
@@ -825,9 +820,6 @@ section {
 }
 
 .reviews-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #000;
   padding-top: 4rem;
 
@@ -890,6 +882,29 @@ section {
 
     .review-box3 {
       background-color: #31d7da;
+    }
+  }
+}
+
+.bonuses-section {
+  padding: 2rem 1rem;
+  
+  h2 {
+    font-size: $section-headline-size;
+  }
+
+  .bonuses-container {
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 2rem;
+
+    img {
+      height: 80vh;
+      border-radius: 16px;
+
+      @include for-phone-only {
+        height: 30vh;
+      }
     }
   }
 }
