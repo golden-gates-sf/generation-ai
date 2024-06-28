@@ -791,6 +791,12 @@ section {
         justify-content: center;
         gap: 2.4rem;
 
+        @include for-phone-only {
+          padding-left: 0;
+          align-items: center;
+          text-align: left;
+        }
+
         span {
           font-size: 1.3em;
         }
@@ -799,7 +805,7 @@ section {
           max-width: 360px;
 
           @include for-phone-only {
-            width: 180px;
+            width: 200px;
           }
         }
       }

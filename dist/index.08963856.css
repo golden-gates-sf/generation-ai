@@ -787,6 +787,14 @@ section h3 {
   display: flex;
 }
 
+@media (width <= 1250px) {
+  .benefits-long-section .benefits-long-container .benefit-card .benefit-card__text-box {
+    text-align: left;
+    align-items: center;
+    padding-left: 0;
+  }
+}
+
 .benefits-long-section .benefits-long-container .benefit-card .benefit-card__text-box span {
   font-size: 1.3em;
 }
@@ -797,7 +805,7 @@ section h3 {
 
 @media (width <= 1250px) {
   .benefits-long-section .benefits-long-container .benefit-card .benefit-card__text-box button {
-    width: 180px;
+    width: 200px;
   }
 }
 
