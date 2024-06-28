@@ -647,7 +647,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 4rem 2rem;
   display: flex;
 }
 
@@ -657,31 +657,25 @@ section {
   }
 }
 
-.main-section h2 {
+section h2 {
   font-size: 2.6em;
 }
 
 @media (width <= 1250px) {
-  .main-section h2 {
+  section h2 {
     font-size: 1.9em;
   }
 }
 
-.main-section h3 {
+section h3 {
   font-size: 1.8em;
-}
-
-@media (width <= 1250px) {
-  .main-section h3 {
-    font-size: 1em;
-  }
 }
 
 .awards-section {
   background-color: #000;
   flex-flow: wrap;
   justify-content: space-around;
-  padding: 3% 8%;
+  padding: 5% 8% 2%;
 }
 
 @media (width <= 1250px) {
@@ -708,16 +702,6 @@ section {
 .benefits-section-short {
   background-color: #000;
   gap: 6rem;
-}
-
-.benefits-section-short h2 {
-  font-size: 2.6em;
-}
-
-@media (width <= 1250px) {
-  .benefits-section-short h2 {
-    font-size: 1.9em;
-  }
 }
 
 .benefits-section-short .benefits-short-container {
@@ -752,11 +736,10 @@ section {
     padding: 2.5rem 1rem;
     font-size: 1.8em;
   }
-}
 
-.benefits-long-section h2 {
-  margin-top: 2rem;
-  font-size: 2.6em;
+  .benefits-section-short .benefits-short-container div h3 {
+    font-size: 1em;
+  }
 }
 
 .benefits-long-section .benefits-long-container {
@@ -820,7 +803,6 @@ section {
 
 .reviews-section {
   background-color: #000;
-  padding-top: 4rem;
 }
 
 @media (width <= 1250px) {
@@ -833,16 +815,6 @@ section {
 
   .reviews-section p {
     padding: 0 10px;
-  }
-}
-
-.reviews-section h2 {
-  font-size: 2.6em;
-}
-
-@media (width <= 1250px) {
-  .reviews-section h2 {
-    font-size: 1.9em;
   }
 }
 
@@ -889,17 +861,21 @@ section {
 }
 
 .bonuses-section {
-  padding: 2rem 1rem;
-}
-
-.bonuses-section h2 {
-  font-size: 2.6em;
+  padding-bottom: 0;
 }
 
 .bonuses-section .bonuses-container {
   flex-direction: row;
+  gap: 7rem;
   padding: 4rem 2rem;
   display: flex;
+}
+
+@media (width <= 1250px) {
+  .bonuses-section .bonuses-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
 }
 
 .bonuses-section .bonuses-container img {
@@ -911,6 +887,14 @@ section {
   .bonuses-section .bonuses-container img {
     height: 30vh;
   }
+}
+
+.bonuses-section .bonuses-container .bonuses-points {
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+  max-width: 600px;
+  display: flex;
 }
 
 .qa-section .accordion-items-container {
