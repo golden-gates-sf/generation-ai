@@ -644,8 +644,10 @@ main .main-text-container p {
 }
 
 section {
+  flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  align-items: center;
+  padding: 4rem 2rem;
   display: flex;
 }
 
@@ -655,32 +657,25 @@ section {
   }
 }
 
-.main-section h2 {
+section h2 {
   font-size: 2.6em;
 }
 
 @media (width <= 1250px) {
-  .main-section h2 {
+  section h2 {
     font-size: 1.9em;
   }
 }
 
-.main-section h3 {
+section h3 {
   font-size: 1.8em;
-}
-
-@media (width <= 1250px) {
-  .main-section h3 {
-    font-size: 1em;
-  }
 }
 
 .awards-section {
   background-color: #000;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   justify-content: space-around;
-  padding: 3% 8%;
-  display: flex;
+  padding: 5% 8% 2%;
 }
 
 @media (width <= 1250px) {
@@ -706,20 +701,7 @@ section {
 
 .benefits-section-short {
   background-color: #000;
-  flex-direction: column;
-  align-items: center;
   gap: 6rem;
-  display: flex;
-}
-
-.benefits-section-short h2 {
-  font-size: 2.6em;
-}
-
-@media (width <= 1250px) {
-  .benefits-section-short h2 {
-    font-size: 1.9em;
-  }
 }
 
 .benefits-section-short .benefits-short-container {
@@ -754,17 +736,10 @@ section {
     padding: 2.5rem 1rem;
     font-size: 1.8em;
   }
-}
 
-.benefits-long-section {
-  flex-direction: column;
-  display: flex;
-}
-
-.benefits-long-section h2 {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 2.6em;
+  .benefits-section-short .benefits-short-container div h3 {
+    font-size: 1em;
+  }
 }
 
 .benefits-long-section .benefits-long-container {
@@ -812,6 +787,14 @@ section {
   display: flex;
 }
 
+@media (width <= 1250px) {
+  .benefits-long-section .benefits-long-container .benefit-card .benefit-card__text-box {
+    text-align: left;
+    align-items: center;
+    padding-left: 0;
+  }
+}
+
 .benefits-long-section .benefits-long-container .benefit-card .benefit-card__text-box span {
   font-size: 1.3em;
 }
@@ -822,16 +805,12 @@ section {
 
 @media (width <= 1250px) {
   .benefits-long-section .benefits-long-container .benefit-card .benefit-card__text-box button {
-    width: 180px;
+    width: 200px;
   }
 }
 
 .reviews-section {
   background-color: #000;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 4rem;
-  display: flex;
 }
 
 @media (width <= 1250px) {
@@ -844,16 +823,6 @@ section {
 
   .reviews-section p {
     padding: 0 10px;
-  }
-}
-
-.reviews-section h2 {
-  font-size: 2.6em;
-}
-
-@media (width <= 1250px) {
-  .reviews-section h2 {
-    font-size: 1.9em;
   }
 }
 
@@ -897,6 +866,43 @@ section {
 
 .reviews-section div .review-box3 {
   background-color: #31d7da;
+}
+
+.bonuses-section {
+  padding-bottom: 0;
+}
+
+.bonuses-section .bonuses-container {
+  flex-direction: row;
+  gap: 7rem;
+  padding: 4rem 2rem;
+  display: flex;
+}
+
+@media (width <= 1250px) {
+  .bonuses-section .bonuses-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+.bonuses-section .bonuses-container img {
+  border-radius: 16px;
+  height: 80vh;
+}
+
+@media (width <= 1250px) {
+  .bonuses-section .bonuses-container img {
+    height: 30vh;
+  }
+}
+
+.bonuses-section .bonuses-container .bonuses-points {
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+  max-width: 600px;
+  display: flex;
 }
 
 .qa-section .accordion-items-container {

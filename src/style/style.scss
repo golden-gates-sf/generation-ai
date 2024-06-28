@@ -663,15 +663,15 @@ main {
 
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  align-items: center;
+  padding: 4rem 2rem;
 
   @include for-phone-only {
     padding: 40px 18px;
   }
-}
 
-.main-section {
   h2 {
     font-size: $section-headline-size;
 
@@ -682,18 +682,14 @@ section {
 
   h3 {
     font-size: 1.8em;
-
-    @include for-phone-only {
-      font-size: 1em;
-    }
   }
 }
 
 .awards-section {
-  display: flex;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 3% 8%;
+  padding: 5% 8% 2% 8%;
   background-color: #000;
 
   @include for-phone-only {
@@ -715,19 +711,8 @@ section {
 }
 
 .benefits-section-short {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 6rem;
   background-color: #000;
-
-  h2 {
-    font-size: $section-headline-size;
-
-    @include for-phone-only {
-      font-size: $mobile-section-headline-s;
-    }
-  }
 
   .benefits-short-container {
     display: grid;
@@ -756,19 +741,17 @@ section {
         font-size: 1.8em;
         padding: 2.5rem 1rem;
       }
+
+      h3 {
+        @include for-phone-only {
+          font-size: 1em;
+        }
+      }
     }
   }
 }
 
 .benefits-long-section {
-  display: flex;
-  flex-direction: column;
-
-  h2 {
-    font-size: $section-headline-size;
-    text-align: center;
-    margin-top: 2rem;
-  }
 
   .benefits-long-container {
     display: flex;
@@ -808,6 +791,12 @@ section {
         justify-content: center;
         gap: 2.4rem;
 
+        @include for-phone-only {
+          padding-left: 0;
+          align-items: center;
+          text-align: left;
+        }
+
         span {
           font-size: 1.3em;
         }
@@ -816,7 +805,7 @@ section {
           max-width: 360px;
 
           @include for-phone-only {
-            width: 180px;
+            width: 200px;
           }
         }
       }
@@ -825,11 +814,7 @@ section {
 }
 
 .reviews-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #000;
-  padding-top: 4rem;
 
   @include for-phone-only {
     display: flex;
@@ -839,14 +824,6 @@ section {
 
     p {
       padding: 0 10px;
-    }
-  }
-
-  h2 {
-    font-size: $section-headline-size;
-
-    @include for-phone-only {
-      font-size: $mobile-section-headline-s;
     }
   }
 
@@ -890,6 +867,39 @@ section {
 
     .review-box3 {
       background-color: #31d7da;
+    }
+  }
+}
+
+.bonuses-section {
+  padding-bottom: 0;
+
+  .bonuses-container {
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 2rem;
+    gap: 7rem;
+
+    @include for-phone-only {
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    img {
+      height: 80vh;
+      border-radius: 16px;
+
+      @include for-phone-only {
+        height: 30vh;
+      }
+    }
+
+    .bonuses-points {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.4rem;
+      max-width: 600px;
     }
   }
 }
