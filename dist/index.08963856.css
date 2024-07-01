@@ -567,32 +567,28 @@ nav .nav-footer a img {
 
 main {
   flex-direction: row;
+  align-items: center;
   gap: 30px;
   min-height: 92vh;
-  padding: 60px 0 40px 140px;
+  padding: 20px 20px 40px 80px;
   display: flex;
 }
 
 @media (width <= 1250px) {
   main {
+    flex-direction: column;
     padding: 0 20px 20px;
   }
 }
 
 main button {
-  max-width: 260px;
+  max-width: 400px;
 }
 
 @media (width <= 1250px) {
   main button {
-    width: 160px;
+    width: 200px;
   }
-}
-
-main img {
-  max-width: 800px;
-  height: 200px;
-  rotate: -45deg;
 }
 
 main .main-text-container {
@@ -613,7 +609,7 @@ main .main-text-container {
 
 main .main-text-container .main-text {
   height: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 main .main-text-container .main-text h1 {
@@ -641,6 +637,14 @@ main .main-text-container p {
     text-align: center;
     font-size: 12px;
   }
+}
+
+main .video-container {
+  margin-bottom: 80px;
+}
+
+main .video-container img {
+  height: 400px;
 }
 
 section {

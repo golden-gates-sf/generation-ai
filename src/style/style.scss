@@ -302,10 +302,6 @@ a {
           display: none;
         }
 
-        // .form-tg-link--active {
-        //   display: block;
-        // }
-
         label {
           text-align: center;
           max-width: 30vw;
@@ -351,7 +347,6 @@ header {
   @include for-phone-only {
     padding: 1rem;
     gap: 1.8rem;
-    // grid-template-columns: 9fr 1fr 1fr;
   }
 
   a {
@@ -469,7 +464,6 @@ nav {
 
   a {
     color: #fff;
-    // transition: all 1s ease-in-out;
   }
 
   ul {
@@ -487,6 +481,7 @@ nav {
     a {
       font-size: 2.8rem;
       padding-left: 20px;
+      // transition: all 1s ease-in-out;
 
       @include for-phone-only {
         font-size: 2.2rem;
@@ -593,27 +588,22 @@ nav {
 main {
   display: flex;
   flex-direction: row;
-  // align-items: center;
+  align-items: center;
   min-height: 92vh;
-  padding: 60px 0 40px 140px;
+  padding: 20px 20px 40px 80px;
   gap: 30px;
 
   @include for-phone-only {
+    flex-direction: column;
     padding: 0 20px 20px 20px;
   }
 
   button {
-    max-width: 260px;
+    max-width: 400px;
 
     @include for-phone-only {
-      width: 160px;
+      width: 200px;
     }
-  }
-
-  img {
-    max-width: 800px;
-    height: 200px;
-    rotate: -45deg;
   }
 
   .main-text-container {
@@ -630,7 +620,7 @@ main {
     }
 
     .main-text {
-      margin-bottom: 50px;
+      margin-bottom: 100px;
       height: 100px;
 
       h1 {
@@ -657,6 +647,13 @@ main {
         text-align: center;
         font-size: 12px;
       }
+    }
+  }
+
+  .video-container {
+    margin-bottom: 80px;
+    img {
+      height: 400px;
     }
   }
 }
